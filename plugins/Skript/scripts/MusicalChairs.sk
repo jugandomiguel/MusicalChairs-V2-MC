@@ -1,0 +1,169 @@
+on load:
+    load yaml "plugins/MusicalChairs/config.yaml" as "config"
+    load yaml "plugins/MusicalChairs/arenas.yaml" as "arenas"
+
+on tab complete of "/musicalchairs":
+    set tab completion for position 1 to "join", "start", "arena" and "status"
+    if tab arg-1 is "arena":
+        set tab completion for position 2 to "add", "remove", "setup" and "list"
+        if tab arg-2 is "remove" or "setup":
+            set tab completion for position 3 to yaml list "arenas" in "config"
+        if tab arg-2 is "setup":
+            set tab completion for position 4 to "check", "save" and "cancel"
+
+command /test :
+    trigger:
+        send "Test command executed!" to player
+        set yaml value "arenas.1" in "config" to "asd"
+
+command /musicalchairs [<cmd: string>] [<option_1: string>] [<option_2: string>] [<option_3: string>]:
+    description: "Manage all the functionalities of musical chairs"
+    permission: musicalchairs.management
+    trigger:
+        if arg-1 is "arena":
+            if arg-2 is not set:
+                send "&aMusical Chairs Arena Management:" to player
+                send "&e/musicalchairs arena add <arenaName> &7- Add a new arena" to player
+                send "&e/musicalchairs arena remove <arenaName> &7- Remove an existing arena" to player
+                send "&e/musicalchairs arena setup <arenaName> &7- Setup an arena" to player
+                send "&e/musicalchairs arena list &7- List all arenas" to player
+            else if arg-2 is "add":
+                if yaml list "arenas" in "config" doesn't contain arg-3:
+                    add arg-3 to yaml list "arenas" in "config"
+                    save yaml "config"
+                    send "&aArena &e%arg-3% &ahas been added." to player
+                else:
+                    send "&cArena &e%arg-3% &calready exists." to player
+            else if arg-2 is "remove":
+                if yaml list "arenas" in "config" contains arg-3:
+                    remove arg-3 from yaml list "arenas" in "config"
+                    save yaml "config"
+                    send "&aArena &e%arg-3% &ahas been removed." to player
+                else:
+                    send "&cArena &e%arg-3% &cdoes not exist." to player
+            else if arg-2 is "list":
+                set {_arenas::*} to yaml list "arenas" in "config"
+                if {_arenas::*} is set:
+                    send "&aAvailable Arenas:" to player
+                    loop {_arenas::*}:
+                        send "&e- %loop-value%" to player
+                else:
+                    send "&cNo arenas available." to player
+            else if arg-2 is "setup":
+                if all:
+                    arg-4 don't exist
+                    yaml list "arenas" in "config" contains arg-3
+                then:
+                    if all:
+                        {musicalchairs.arena.setup.%arg-3%} isn't set
+                        {musicalchairs.arena.setup.player.%player%} isn't set
+                    then:
+                        set {musicalchairs.arena.setup.%arg-3%} to player
+                        set {musicalchairs.arena.setup.player.%player%} to arg-3
+                        send "&aYou entered setup mode for the arena &e%arg-3%" 
+                        set {_times} to 0
+                        loop 9 times:
+                            set {musicalchairs.arena.setup.%arg-3%::%{_times}%} to player's slot {_times}
+                            delete player's slot {_times} 
+                            add 1 to {_times}
+
+                        set {_set_spawn} to nether_star named "&eSet Spawn"
+                        set string tag "musicalchairs" of custom nbt of {_set_spawn} to "mc;set_spawn"
+                        set player's slot 0 to {_set_spawn}
+
+                        set {_set_arena_center} to compass named "&bSet Arena Center"
+                        set string tag "musicalchairs" of custom nbt of {_set_arena_center} to "mc;set_arena_center"
+                        set player's slot 1 to {_set_arena_center}
+
+                        set {_set_arena_boundaries} to stick named "&aSet Arena Boundaries"
+                        set string tag "musicalchairs" of custom nbt of {_set_arena_boundaries} to "mc;set_arena_boundaries"
+                        set player's slot 2 to {_set_arena_boundaries}
+
+                        set {_set_lobby_boundaries} to feather named "&dSet Lobby Boundaries"
+                        set string tag "musicalchairs" of custom nbt of {_set_lobby_boundaries} to "mc;set_lobby_boundaries"
+                        set player's slot 3 to {_set_lobby_boundaries}
+                    else:
+                        if {musicalchairs.arena.setup.%arg-3%} is player:
+                            send "&cYou are already configuring the arena &4%arg-3%" 
+                        else:
+                            send "&cSomeone is already configuring the arena &4%arg-3%" 
+
+                else if all:
+                    arg-4 exists
+                    yaml list "arenas" in "config" contains arg-3
+                then:
+                    if arg-4 is "check":
+                        send "si1" to player
+                    if {musicalchairs.arena.setup.%arg-3%} contain player:
+                        if arg-4 is "cancel":
+                            delete {musicalchairs.arena.setup.%arg-3%}
+                            delete {musicalchairs.arena.setup.player.%player%}
+                            set {_times} to 0
+                            loop 9 times:
+                                set player's slot {_times} to {musicalchairs.arena.setup.%arg-3%::%{_times}%}
+                                add 1 to {_times}
+                            send "&aYou left setup mode &c&nwithout saving&r&a the arena &e%arg-3%" to player
+
+                        else if arg-4 is "save":
+                            broadcast "&5%{musicalchairs.arena.setup.player.%player%}%"
+                            set yaml list "arenas.%{musicalchairs.arena.setup.player.%player%}%.spawn" in "config" to {musicalchairs.arena.setup.%{_arena}%.spawn}
+                            # {musicalchairs.arena.setup.%{_arena}%.spawn}
+                            # {musicalchairs.arena.setup.%{_arena}%.arena_center}
+                            # {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos1}
+                            # {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos1}
+                            # {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos2}
+                            # {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos2}
+                            set {_times} to 0
+                            loop 9 times:
+                                set player's slot {_times} to {musicalchairs.arena.setup.%arg-3%::%{_times}%}
+                                add 1 to {_times}
+                            send "&aYou left setup mode &b&nsaving&r&a the arena &e%arg-3%" to player
+                            save yaml "config"
+                            delete {musicalchairs.arena.setup.%arg-3%}
+                            delete {musicalchairs.arena.setup.player.%player%}
+                    else:
+                        send "&cYou are not in setup mode!" to player
+
+                else if yaml list "arenas" in "config" doesn't contain arg-3:
+                    send "&cArena %arg-3% doesn't exist!" to player
+                else:
+                    send "else??" to player
+                    loop yaml list "arenas" in "config":
+                        broadcast loop-value
+
+function arenaSetup(mode: string, p: player, arenaName: string):
+    broadcast "asd"
+
+on right click:
+    if custom nbt compound of event-item has tag "musicalchairs":
+        set {_arena} to {musicalchairs.arena.setup.player.%player%}
+        if string tag "musicalchairs" of custom nbt of event-item is "mc;set_spawn":
+            cancel event
+            set {musicalchairs.arena.setup.%{_arena}%.spawn} to event-block's location
+            send action bar "&a&lspawn settled" to player
+
+        else if string tag "musicalchairs" of custom nbt of event-item is "mc;set_arena_center":
+            cancel event
+            set {musicalchairs.arena.setup.%{_arena}%.arena_center} to event-block's location
+            send action bar "&a&larena_center settled" to player
+
+        else if string tag "musicalchairs" of custom nbt of event-item is "mc;set_arena_boundaries":
+            cancel event
+            set {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos1} to event-block's location
+            send action bar "&a&larena_boundaries.pos1 settled" to player
+
+        else if string tag "musicalchairs" of custom nbt of event-item is "mc;set_lobby_boundaries":
+            cancel event
+            set {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos1} to event-block's location
+            send action bar "&a&llobby_boundaries.pos1 settled" to player
+on left click:
+    if custom nbt compound of event-item has tag "musicalchairs":
+        set {_arena} to {musicalchairs.arena.setup.player.%player%}
+        if string tag "musicalchairs" of custom nbt of event-item is "mc;set_arena_boundaries":
+            cancel event
+            set {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos2} to event-block's location
+            send action bar "&a&larena_boundaries.pos2 settled" to player
+        else if string tag "musicalchairs" of custom nbt of event-item is "mc;set_lobby_boundaries":
+            cancel event
+            set {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos2} to event-block's location
+            send action bar "&a&llobby_boundaries.pos2 settled" to player
