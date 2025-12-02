@@ -1,7 +1,29 @@
 arenas:
-- T1
-- T2
-- T3
-- T4
-- T5
-- asd
+    t1:
+        display_name: t1
+        spawn:
+            x: 25.5
+            y: 106.5
+            z: 9.5
+        arena_center:
+            x: 23.5
+            y: 106.5
+            z: 9.5
+        arena_boundaries:
+            pos1:
+                x: 24.5
+                y: 106.5
+                z: 8.5
+            pos2:
+                x: 25.5
+                y: 106.5
+                z: 7.5
+        lobby_boundaries:
+            pos1:
+                x: 22.5
+                y: 106.5
+                z: 10.5
+            pos2:
+                x: 21.5
+                y: 106.5
+                z: 11.5
