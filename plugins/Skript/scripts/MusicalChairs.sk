@@ -1,30 +1,86 @@
+options:
+    game_prefix: &6M&eC
 on load:
     load yaml "plugins/MusicalChairs/config.yaml" as "config"
-    load yaml "plugins/MusicalChairs/arenas.yaml" as "arenas"
 
 on tab complete of "/musicalchairs":
-    set tab completion for position 1 to "join", "start", "arena" and "status"
+    set tab completion for position 1 to "join", "leave", "lobby", "start", "arena" and "status"
+    if tab arg-1 is "join":
+        set tab completion for position 2 to getArenas()
+    if tab arg-1 is "lobby":
+        set tab completion for position 2 to "set_spawn"
     if tab arg-1 is "arena":
-        set tab completion for position 2 to "add", "remove", "setup" and "list"
-        if tab arg-2 is "remove" or "setup":
+        set tab completion for position 2 to "reload","add", "remove", "setup" and "list"
+        if tab arg-2 is "reload", "remove" or "setup":
             set tab completion for position 3 to getArenas()
-            # {_arenas::*}
         if tab arg-2 is "setup":
             set tab completion for position 4 to "check", "save" and "cancel"
-
-command /test :
-    trigger:
-        loop yaml node keys "arenas" from "config":
-            broadcast yaml value "%loop-node%" from "%loop-id%"
-            broadcast loop-key
-            #  [the] loop-(1¦id|2¦val|3¦list|4¦node|5¦key|6¦subnodekey[s]|7¦iteration)
-        # send "Test command executed!" to player
-        # set yaml value "arenas.1" in "config" to "asd"
 
 command /musicalchairs [<cmd: string>] [<option_1: string>] [<option_2: string>] [<option_3: string>]:
     description: "Manage all the functionalities of musical chairs"
     permission: musicalchairs.management
     trigger:
+        if arg-1 is "join":
+
+            if all:
+                {musicalchairs.arena.%arg-3%.players::*} doesn't contain player 
+                getArenas() contains arg-2
+            then:
+                # {musicalchairs.arena.setup.%arg-3%}
+                # {musicalchairs.arena.setup.player.%player%}
+                #TODO: Create join system (make sure works as a multiarena system)
+                add player to {musicalchairs.arena.%arg-3%.players::*}
+                broadcast "si"
+                set {_x} to yaml value "arenas.%arg-2%.spawn.x" from "config"
+                set {_y} to yaml value "arenas.%arg-2%.spawn.y" from "config"
+                set {_z} to yaml value "arenas.%arg-2%.world" from "config"
+                set {_world} to yaml value "arenas.%arg-2%.spawn.x" from "config"
+                broadcast {_x}
+                broadcast {_y}
+                broadcast {_z}
+                broadcast {_world}
+                teleport player to location({_x},{_y},{_z},"%{_world}%")
+            else:
+                broadcast "no"
+        #FIXME: ADD A LOBBY CONFIGURATION (no lobby per arena, general lobby, to tp players after leaving arenas)
+        if arg-1 is "leave":
+            if all:
+                {musicalchairs.arena.%arg-3%.players::*} contain player 
+                getArenas() contains arg-2
+            then:
+                # {musicalchairs.arena.setup.%arg-3%}
+                # {musicalchairs.arena.setup.player.%player%}
+                #TODO: Create join system (make sure works as a multiarena system)
+                remove player from {musicalchairs.arena.%arg-3%.players::*}
+                broadcast "si"
+                # teleport player to location(yaml value "arenas.%arg-2%.spawn.x" from "config",yaml value "arenas.%arg-2%.spawn.y" from "config",yaml value "arenas.%arg-2%.spawn.z" from "config",yaml value "arenas.%arg-2%.world" from "config")
+                # set {_spawn.1} to yaml value "arenas.%arg-2%.spawn.x" from "config"
+                # set {_spawn.2} to yaml value "arenas.%arg-2%.spawn.y" from "config"
+                # set {_spawn.3} to yaml value "arenas.%arg-2%.spawn.z" from "config"
+        
+                # set {_arena_center.1} to yaml value "arenas.%arg-2%.arena_center.x" from "config"
+                # set {_arena_center.2} to yaml value "arenas.%arg-2%.arena_center.y" from "config"
+                # set {_arena_center.3} to yaml value "arenas.%arg-2%.arena_center.z" from "config"
+        
+                # set {_arena_boundaries.pos1.1} to yaml value "arenas.%arg-2%.arena_boundaries.pos1.x" from "config"
+                # set {_arena_boundaries.pos1.2} to yaml value "arenas.%arg-2%.arena_boundaries.pos1.y" from "config"
+                # set {_arena_boundaries.pos1.3} to yaml value "arenas.%arg-2%.arena_boundaries.pos1.z" from "config"
+                # set {_arena_boundaries.pos2.1} to yaml value "arenas.%arg-2%.arena_boundaries.pos2.x" from "config"
+                # set {_arena_boundaries.pos2.2} to yaml value "arenas.%arg-2%.arena_boundaries.pos2.y" from "config"
+                # set {_arena_boundaries.pos2.3} to yaml value "arenas.%arg-2%.arena_boundaries.pos2.z" from "config"
+        
+                # set {_lobby_boundaries.pos1.1} to yaml value "arenas.%arg-2%.lobby_boundaries.pos1.x" from "config"
+                # set {_lobby_boundaries.pos1.2} to yaml value "arenas.%arg-2%.lobby_boundaries.pos1.y" from "config"
+                # set {_lobby_boundaries.pos1.3} to yaml value "arenas.%arg-2%.lobby_boundaries.pos1.z" from "config"
+                # set {_lobby_boundaries.pos2.1} to yaml value "arenas.%arg-2%.lobby_boundaries.pos2.x" from "config"
+                # set {_lobby_boundaries.pos2.2} to yaml value "arenas.%arg-2%.lobby_boundaries.pos2.y" from "config"
+                # set {_lobby_boundaries.pos2.3} to yaml value "arenas.%arg-2%.lobby_boundaries.pos2.z" from "config"
+            else:
+                broadcast "no"
+
+        if arg-1 is "lobby":
+            if arg-2 is "set_spawn":
+                send "set spawn" to player
         if arg-1 is "arena":
             if arg-2 is not set:
                 send "&aMusical Chairs Arena Management:" to player
@@ -34,15 +90,29 @@ command /musicalchairs [<cmd: string>] [<option_1: string>] [<option_2: string>]
                 send "&e/musicalchairs arena list &7- List all arenas" to player
             else if arg-2 is "add":
                 if getArenas() doesn't contain arg-3:
-                    set yaml value "arenas.%arg-3%.display_name" from "config" to arg-3
+                    setYamlValue("config","arenas.%arg-3%.display_name",arg-3)
                     save yaml "config"
                     send "&aArena &e%arg-3% &ahas been added." to player
                 else:
                     send "&cArena &e%arg-3% &calready exists." to player
+            else if arg-2 is "reload":
+                if isArenaReady(arg-3) is true:
+                    loadArena(arg-3)
+                else if all:
+                    getArenas() contain arg-3
+                    isArenaReady(arg-3) isn't true
+                    arg-3 is set
+                then:
+                    send "&cArena is not configured correctly! Use &4&n/musicalchairs arena setup %arg-3%"
+                else if getArenas() doesn't contain arg-3:
+                    send "&cThe arena &n%arg-3%&c do not exist!" to player
+                else if arg-3 isn't set:
+                    send "&cYou have to input an arena!" to player
             else if arg-2 is "remove":
                 if getArenas() contains arg-3:
                     delete yaml list "arenas.%arg-3%" in "config"
-                    #!TODO: Finish arena adding to files, removing, setup
+                    # delete yaml node "arenas.%arg-3%" from "config"
+                    #BUG: TENER CUIDADO CON ESTE CAMBIO, ME LO DIO CHATGPT
                     save yaml "config"
                     send "&aArena &e%arg-3% &ahas been removed." to player
                 else:
@@ -56,9 +126,10 @@ command /musicalchairs [<cmd: string>] [<option_1: string>] [<option_2: string>]
                     send "&cNo arenas available." to player
             else if arg-2 is "setup":
                 if all:
-                    arg-4 don't exist
+                    arg-4 is not set
                     getArenas() contains arg-3
                 then:
+                #TODO: ADD WORLD SELECT CONFIGURATION
                     if all:
                         {musicalchairs.arena.setup.%arg-3%} isn't set
                         {musicalchairs.arena.setup.player.%player%} isn't set
@@ -66,12 +137,16 @@ command /musicalchairs [<cmd: string>] [<option_1: string>] [<option_2: string>]
                         set {musicalchairs.arena.setup.%arg-3%} to player
                         set {musicalchairs.arena.setup.player.%player%} to arg-3
                         send "&aYou entered setup mode for the arena &e%arg-3%" 
+                        if yaml value "arenas.%arg-3%.world" from "config" isn't set:
+                            set {musicalchairs.arena.setup.%arg-3%.world} to player's world
+                            send "&aThe &e%arg-3%'s world&a now is &7%player's world%&r" to player
+                        send "&aUse &7&n/musicalchairs arena setup %arg-3% save&a to save the configurations." to player
                         set {_times} to 0
                         loop 9 times:
                             set {musicalchairs.arena.setup.%arg-3%::%{_times}%} to player's slot {_times}
                             delete player's slot {_times} 
                             add 1 to {_times}
-
+                            
                         set {_set_spawn} to nether_star named "&eSet Spawn"
                         set string tag "musicalchairs" of custom nbt of {_set_spawn} to "mc;set_spawn"
                         set player's slot 0 to {_set_spawn}
@@ -90,16 +165,74 @@ command /musicalchairs [<cmd: string>] [<option_1: string>] [<option_2: string>]
                     else:
                         if {musicalchairs.arena.setup.%arg-3%} is player:
                             send "&cYou are already configuring the arena &4%arg-3%" 
+                        else if arg-3 isn't {musicalchairs.arena.setup.player.%player%}:
+                            send "&cYou can't configure multiple arenas at the same time!" 
                         else:
                             send "&cSomeone is already configuring the arena &4%arg-3%" 
-
                 else if all:
-                    arg-4 exists
+                    arg-4 is set
                     getArenas() contains arg-3
                 then:
                     if arg-4 is "check":
-                        send "si1" to player
-                    if {musicalchairs.arena.setup.%arg-3%} contain player:
+                        set {_cross} to "&c❌"#"&c✖"
+                        set {_check} to "&a✔"
+                        if all:
+                            yaml value "arenas.%arg-3%.spawn.x" from "config" is set
+                            yaml value "arenas.%arg-3%.spawn.y" from "config" is set
+                            yaml value "arenas.%arg-3%.spawn.z" from "config" is set
+                        then:
+                            set {_spawn} to {_check}
+                        else:
+                            set {_spawn} to {_cross}
+                        if all:
+                            yaml value "arenas.%arg-3%.arena_center.x" from "config" is set
+                            yaml value "arenas.%arg-3%.arena_center.y" from "config" is set
+                            yaml value "arenas.%arg-3%.arena_center.z" from "config" is set
+                        then:
+                            set {_arena_center} to {_check}
+                        else:
+                            set {_arena_center} to {_cross}
+                        if all:
+                            yaml value "arenas.%arg-3%.arena_boundaries.pos1.x" from "config" is set
+                            yaml value "arenas.%arg-3%.arena_boundaries.pos1.y" from "config" is set
+                            yaml value "arenas.%arg-3%.arena_boundaries.pos1.z" from "config" is set
+                            yaml value "arenas.%arg-3%.arena_boundaries.pos2.x" from "config" is set
+                            yaml value "arenas.%arg-3%.arena_boundaries.pos2.y" from "config" is set
+                            yaml value "arenas.%arg-3%.arena_boundaries.pos2.z" from "config" is set
+                        then:
+                            set {_arena_boundaries} to {_check}
+                        else:
+                            set {_arena_boundaries} to {_cross}                        
+                        if all:
+                            yaml value "arenas.%arg-3%.lobby_boundaries.pos1.x" from "config" is set
+                            yaml value "arenas.%arg-3%.lobby_boundaries.pos1.y" from "config" is set
+                            yaml value "arenas.%arg-3%.lobby_boundaries.pos1.z" from "config" is set
+                            yaml value "arenas.%arg-3%.lobby_boundaries.pos2.x" from "config" is set
+                            yaml value "arenas.%arg-3%.lobby_boundaries.pos2.y" from "config" is set
+                            yaml value "arenas.%arg-3%.lobby_boundaries.pos2.z" from "config" is set
+                        then:
+                            set {_lobby_boundaries} to {_check}
+                        else:
+                            set {_lobby_boundaries} to {_cross}   
+
+                        if yaml value "arenas.%arg-3%.display_name" from "config" is set:
+                            set {_display_name} to {_check}
+                        else:
+                            set {_display_name} to {_cross}        
+
+                        if yaml value "arenas.%arg-3%.world" from "config" is set:
+                            set {_world} to {_check}
+                        else:
+                            set {_world} to {_cross}                        
+                        send "&e&lStatus of %arg-3% arena" to player
+                        send "&7World: %{_world}%" to player
+                        send "&7Display Name: %{_display_name}%" to player
+                        send "&7Spawn: %{_spawn}%" to player
+                        send "&7Arena center: %{_arena_center}%" to player
+                        send "&7Arena boundaries: %{_arena_boundaries}%" to player
+                        send "&7Lobby boundaries: %{_lobby_boundaries}%" to player
+
+                    if {musicalchairs.arena.setup.%arg-3%} is player:
                         if arg-4 is "cancel":
                             set {_times} to 0
                             loop 9 times:
@@ -120,30 +253,41 @@ command /musicalchairs [<cmd: string>] [<option_1: string>] [<option_2: string>]
                         else if arg-4 is "save":
                             set {_arena} to {musicalchairs.arena.setup.player.%player%}
                             # broadcast "&5%{_arena}%"
+                            #FIXME: QUITAR TERNARIO Y HACER UN IF ABIERTO CON ELSE
                             if {musicalchairs.arena.setup.%{_arena}%.spawn::*} is set:
-                                set yaml value "arenas.%arg-3%.spawn.x" from "config" to {musicalchairs.arena.setup.%{_arena}%.spawn::1}
-                                set yaml value "arenas.%arg-3%.spawn.y" from "config" to {musicalchairs.arena.setup.%{_arena}%.spawn::2}
-                                set yaml value "arenas.%arg-3%.spawn.z" from "config" to {musicalchairs.arena.setup.%{_arena}%.spawn::3}
-                            if {musicalchairs.arena.setup.%{_arena}%.arena_center::1} is set:
-                                set yaml value "arenas.%arg-3%.arena_center.x" from "config" to {musicalchairs.arena.setup.%{_arena}%.arena_center::1}
-                                set yaml value "arenas.%arg-3%.arena_center.y" from "config" to {musicalchairs.arena.setup.%{_arena}%.arena_center::2}
-                                set yaml value "arenas.%arg-3%.arena_center.z" from "config" to {musicalchairs.arena.setup.%{_arena}%.arena_center::3}
+                                setYamlValue("config","arenas.%arg-3%.spawn.x", "%{musicalchairs.arena.setup.%{_arena}%.spawn::1} if {musicalchairs.arena.setup.%{_arena}%.spawn::1} is set else "none"%")
+                                setYamlValue("config","arenas.%arg-3%.spawn.y", "%{musicalchairs.arena.setup.%{_arena}%.spawn::2} if {musicalchairs.arena.setup.%{_arena}%.spawn::2} is set else "none"%")
+                                setYamlValue("config","arenas.%arg-3%.spawn.z", "%{musicalchairs.arena.setup.%{_arena}%.spawn::3} if {musicalchairs.arena.setup.%{_arena}%.spawn::3} is set else "none"%")
+                            
+                            if {musicalchairs.arena.setup.%{_arena}%.arena_center::*} is set:
+                                setYamlValue("config","arenas.%arg-3%.arena_center.x", "%{musicalchairs.arena.setup.%{_arena}%.arena_center::1} if {musicalchairs.arena.setup.%{_arena}%.arena_center::1} is set else "none"%")
+                                setYamlValue("config","arenas.%arg-3%.arena_center.y", "%{musicalchairs.arena.setup.%{_arena}%.arena_center::2} if {musicalchairs.arena.setup.%{_arena}%.arena_center::2} is set else "none"%")
+                                setYamlValue("config","arenas.%arg-3%.arena_center.z", "%{musicalchairs.arena.setup.%{_arena}%.arena_center::3} if {musicalchairs.arena.setup.%{_arena}%.arena_center::3} is set else "none"%")
+                            
                             if {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos1::*} is set:
-                                set yaml value "arenas.%arg-3%.arena_boundaries.pos1.x" from "config" to {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos1::1}
-                                set yaml value "arenas.%arg-3%.arena_boundaries.pos1.y" from "config" to {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos1::2}
-                                set yaml value "arenas.%arg-3%.arena_boundaries.pos1.z" from "config" to {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos1::3}
-                                set yaml value "arenas.%arg-3%.arena_boundaries.pos2.x" from "config" to {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos1::1}
-                                set yaml value "arenas.%arg-3%.arena_boundaries.pos2.y" from "config" to {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos1::2}
-                                set yaml value "arenas.%arg-3%.arena_boundaries.pos2.z" from "config" to {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos1::3}
+                                setYamlValue("config","arenas.%arg-3%.arena_boundaries.pos1.x", "%{musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos1::1} if {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos1::1} is set else "none"%")
+                                setYamlValue("config","arenas.%arg-3%.arena_boundaries.pos1.y", "%{musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos1::2} if {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos1::2} is set else "none"%")
+                                setYamlValue("config","arenas.%arg-3%.arena_boundaries.pos1.z", "%{musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos1::3} if {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos1::3} is set else "none"%")
                             if {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos2::*} is set:
-                                set yaml value "arenas.%arg-3%.lobby_boundaries.pos1.x" from "config" to {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos2::1}
-                                set yaml value "arenas.%arg-3%.lobby_boundaries.pos1.y" from "config" to {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos2::2}
-                                set yaml value "arenas.%arg-3%.lobby_boundaries.pos1.z" from "config" to {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos2::3}
-                                set yaml value "arenas.%arg-3%.lobby_boundaries.pos2.x" from "config" to {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos2::1}
-                                set yaml value "arenas.%arg-3%.lobby_boundaries.pos2.y" from "config" to {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos2::2}
-                                set yaml value "arenas.%arg-3%.lobby_boundaries.pos2.z" from "config" to {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos2::3}
+                                setYamlValue("config","arenas.%arg-3%.arena_boundaries.pos2.x", "%{musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos2::1} if {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos2::1} is set else "none"%")
+                                setYamlValue("config","arenas.%arg-3%.arena_boundaries.pos2.y", "%{musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos2::2} if {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos2::2} is set else "none"%")
+                                setYamlValue("config","arenas.%arg-3%.arena_boundaries.pos2.z", "%{musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos2::3} if {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos2::3} is set else "none"%")
+                            
+                            if {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos1::*} is set:
+                                setYamlValue("config","arenas.%arg-3%.lobby_boundaries.pos1.x", "%{musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos1::1} if {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos1::1} is set else "none"%")
+                                setYamlValue("config","arenas.%arg-3%.lobby_boundaries.pos1.y", "%{musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos1::2} if {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos1::2} is set else "none"%")
+                                setYamlValue("config","arenas.%arg-3%.lobby_boundaries.pos1.z", "%{musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos1::3} if {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos1::3} is set else "none"%")
+                            
+                            if {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos2::*} is set:
+                                setYamlValue("config","arenas.%arg-3%.lobby_boundaries.pos2.x", "%{musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos2::1} if {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos2::1} is set else "none"%")
+                                setYamlValue("config","arenas.%arg-3%.lobby_boundaries.pos2.y", "%{musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos2::2} if {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos2::2} is set else "none"%")
+                                setYamlValue("config","arenas.%arg-3%.lobby_boundaries.pos2.z", "%{musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos2::3} if {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos2::3} is set else "none"%")
+                            if {musicalchairs.arena.setup.%{_arena}%.world} is set:
+                                setYamlValue("config","arenas.%arg-3%.world", "%player's world%")
                             set {_times} to 0
                             save yaml "config"
+                            # function setYamlValue(yaml: string,path: string,value: string):
+                            #     set yaml value {_path} from {_yaml} to {_value}
                             loop 9 times:
                                 set player's slot {_times} to {musicalchairs.arena.setup.%arg-3%::%{_times}%}
                                 add 1 to {_times}
@@ -159,83 +303,154 @@ command /musicalchairs [<cmd: string>] [<option_1: string>] [<option_2: string>]
                             delete {musicalchairs.arena.setup.%arg-3%}
                             delete {musicalchairs.arena.setup.player.%player%}
                     else:
-                        send "&cYou are not in setup mode!" to player
+                        if arg-4 isn't "check":
+                            send "&cYou are not in setup mode!" to player
 
+                else if arg-3 isn't set:
+                    send "&cYou have to input the arena name!"
                 else if getArenas() doesn't contain arg-3:
-                    send "&cArena %arg-3% doesn't exist! CANCEL|SAVE|CHECK" to player
+                    send "&cArena %arg-3% doesn't exist!" to player
                 else:
                     send "else??" to player
                     loop getArenas():
                         broadcast loop-value
 
+######################################################################
+#Setup Items
+######################################################################
+on right click:
+    if custom nbt compound of event-item has tag "musicalchairs":
+        cancel event
+        if event-block's location is within 5 blocks around player's location:
+            set {_arena} to {musicalchairs.arena.setup.player.%player%}
+            #Set spawn ITEM
+            if string tag "musicalchairs" of custom nbt of event-item is "mc;set_spawn":
+                set {musicalchairs.arena.setup.%{_arena}%.spawn::1} to event-block's x-coord
+                set {musicalchairs.arena.setup.%{_arena}%.spawn::2} to event-block's y-coord + 1
+                set {musicalchairs.arena.setup.%{_arena}%.spawn::3} to event-block's z-coord
+                drawBlockOutline(event-block, 4, player, flame)
+                send action bar "&a&lspawn settled" to player
+
+            #Set arena center ITEM
+            else if string tag "musicalchairs" of custom nbt of event-item is "mc;set_arena_center":
+                set {musicalchairs.arena.setup.%{_arena}%.arena_center::1} to event-block's x-coord
+                set {musicalchairs.arena.setup.%{_arena}%.arena_center::2} to event-block's y-coord + 1
+                set {musicalchairs.arena.setup.%{_arena}%.arena_center::3} to event-block's z-coord
+                drawBlockOutline(event-block, 4, player, flame)
+                send action bar "&a&larena_center settled" to player
+
+            #Set arena boundaries (pos2) ITEM
+            else if string tag "musicalchairs" of custom nbt of event-item is "mc;set_arena_boundaries":
+                set {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos2::1} to event-block's x-coord
+                set {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos2::2} to event-block's y-coord + 1
+                set {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos2::3} to event-block's z-coord
+                drawBlockOutline(event-block, 4, player, flame)
+                send action bar "&a&larena_boundaries.pos2 settled" to player
+
+            #Set lobby boundaries (pos2) ITEM
+            else if string tag "musicalchairs" of custom nbt of event-item is "mc;set_lobby_boundaries":
+                set {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos2::1} to event-block's x-coord
+                set {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos2::2} to event-block's y-coord + 1
+                set {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos2::3} to event-block's z-coord
+                drawBlockOutline(event-block, 4, player, flame)
+                send action bar "&a&llobby_boundaries.pos2 settled" to player
+on left click:
+    if custom nbt compound of event-item has tag "musicalchairs":
+        cancel event
+        if event-block's location is within 5 blocks around player's location:
+            set {_arena} to {musicalchairs.arena.setup.player.%player%}
+            #Set arena boundaries (pos1) ITEM
+            if string tag "musicalchairs" of custom nbt of event-item is "mc;set_arena_boundaries":
+                set {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos1::1} to event-block's x-coord
+                set {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos1::2} to event-block's y-coord + 1
+                set {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos1::3} to event-block's z-coord
+                drawBlockOutline(event-block, 4, player, soul fire flame)
+                send action bar "&a&larena_boundaries.pos1 settled" to player
+
+            #Set lobby boundaries (pos1) ITEM
+            else if string tag "musicalchairs" of custom nbt of event-item is "mc;set_lobby_boundaries":
+                set {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos1::1} to event-block's x-coord
+                set {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos1::2} to event-block's y-coord + 1
+                set {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos1::3} to event-block's z-coord
+                drawBlockOutline(event-block, 4, player, soul fire flame)
+                send action bar "&a&llobby_boundaries.pos1 settled" to player
 
 ######################################################################
 #Functions
 ######################################################################
-function arenaSetup(mode: string, p: player, arenaName: string):
-    broadcast "asd"
+function loadArena(arena: string):
+
+# cacheArena(arena)
+# isArenaReady(arena)
+#TODO: Agregar sistema que haga cache de todo el yaml de las arenas y luego cuando una partida se inicie haga otro cache del cache para tener más seguridad
+#Server Loaded: LoadArenas() -> Partida Iniciada: CacheArena(Saca los valores de loadArena para luego usarlos en partida)
+#Revisar Chatgpt para detalles
+
+function isArenaReady(arena: string) :: boolean:
+    if all:
+        yaml value "arenas.%{_arena}%.spawn.x" from "config" is set
+        yaml value "arenas.%{_arena}%.spawn.x" from "config" is set
+        yaml value "arenas.%{_arena}%.spawn.y" from "config" is set
+        yaml value "arenas.%{_arena}%.spawn.z" from "config" is set
+
+        yaml value "arenas.%{_arena}%.arena_center.x" from "config" is set
+        yaml value "arenas.%{_arena}%.arena_center.y" from "config" is set
+        yaml value "arenas.%{_arena}%.arena_center.z" from "config" is set
+
+        yaml value "arenas.%{_arena}%.arena_boundaries.pos1.x" from "config" is set
+        yaml value "arenas.%{_arena}%.arena_boundaries.pos1.y" from "config" is set
+        yaml value "arenas.%{_arena}%.arena_boundaries.pos1.z" from "config" is set
+        yaml value "arenas.%{_arena}%.arena_boundaries.pos2.x" from "config" is set
+        yaml value "arenas.%{_arena}%.arena_boundaries.pos2.y" from "config" is set
+        yaml value "arenas.%{_arena}%.arena_boundaries.pos2.z" from "config" is set
+
+        yaml value "arenas.%{_arena}%.lobby_boundaries.pos1.x" from "config" is set
+        yaml value "arenas.%{_arena}%.lobby_boundaries.pos1.y" from "config" is set
+        yaml value "arenas.%{_arena}%.lobby_boundaries.pos1.z" from "config" is set
+        yaml value "arenas.%{_arena}%.lobby_boundaries.pos2.x" from "config" is set
+        yaml value "arenas.%{_arena}%.lobby_boundaries.pos2.y" from "config" is set
+        yaml value "arenas.%{_arena}%.lobby_boundaries.pos2.z" from "config" is set
+    then:
+        return true
+    else:
+        return false
+
+
 
 function getArenas() :: strings: 
     loop yaml node keys "arenas" from "config":
         add loop-key to {_arenas::*}
     return {_arenas::*}
 
-function setYamlValue(path: string,value: string):
-    set yaml value "%{_path}%" from "config" to {_value}
-######################################################################
-#Setup Items
-######################################################################
+function setYamlValue(yaml: string, path: string, value: string):
+    set yaml value {_path} from {_yaml} to {_value}
 
+function itemWithCustomNbt(name: string, material: item, tag: string, nbt_value: string) :: item:
+    set {_item} to {_material} named {_name}
+    set string tag {_tag} of custom nbt of {_item} to {_nbt_value}
+    return {_item}
 
-on right click:
-    if custom nbt compound of event-item has tag "musicalchairs":
-        set {_arena} to {musicalchairs.arena.setup.player.%player%}
-        #Set spawn ITEM
-        if string tag "musicalchairs" of custom nbt of event-item is "mc;set_spawn":
-            cancel event
-            set {musicalchairs.arena.setup.%{_arena}%.spawn::1} to event-block's x-coord
-            set {musicalchairs.arena.setup.%{_arena}%.spawn::2} to event-block's y-coord
-            set {musicalchairs.arena.setup.%{_arena}%.spawn::3} to event-block's z-coord
-            send action bar "&a&lspawn settled" to player
-
-        #Set arena center ITEM
-        else if string tag "musicalchairs" of custom nbt of event-item is "mc;set_arena_center":
-            cancel event
-            set {musicalchairs.arena.setup.%{_arena}%.arena_center::1} to event-block's x-coord
-            set {musicalchairs.arena.setup.%{_arena}%.arena_center::2} to event-block's y-coord
-            set {musicalchairs.arena.setup.%{_arena}%.arena_center::3} to event-block's z-coord
-            send action bar "&a&larena_center settled" to player
-
-        #Set arena boundaries (pos1) ITEM
-        else if string tag "musicalchairs" of custom nbt of event-item is "mc;set_arena_boundaries":
-            cancel event
-            set {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos1::1} to event-block's x-coord
-            set {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos1::2} to event-block's y-coord
-            set {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos1::3} to event-block's z-coord
-            send action bar "&a&larena_boundaries.pos1 settled" to player
-
-        #Set lobby boundaries (pos1) ITEM
-        else if string tag "musicalchairs" of custom nbt of event-item is "mc;set_lobby_boundaries":
-            cancel event
-            set {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos1::1} to event-block's x-coord
-            set {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos1::2} to event-block's y-coord
-            set {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos1::3} to event-block's z-coord
-            send action bar "&a&llobby_boundaries.pos1 settled" to player
-on left click:
-    if custom nbt compound of event-item has tag "musicalchairs":
-        set {_arena} to {musicalchairs.arena.setup.player.%player%}
-        #Set arena boundaries (pos2) ITEM
-        if string tag "musicalchairs" of custom nbt of event-item is "mc;set_arena_boundaries":
-            cancel event
-            set {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos2::1} to event-block's x-coord
-            set {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos2::2} to event-block's y-coord
-            set {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos2::3} to event-block's z-coord
-            send action bar "&a&larena_boundaries.pos2 settled" to player
-
-        #Set lobby boundaries (pos2) ITEM
-        else if string tag "musicalchairs" of custom nbt of event-item is "mc;set_lobby_boundaries":
-            cancel event
-            set {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos2::1} to event-block's x-coord
-            set {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos2::2} to event-block's y-coord
-            set {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos2::3} to event-block's z-coord
-            send action bar "&a&llobby_boundaries.pos2 settled" to player
+function drawBlockOutline(b: block, steps: number, p: player, particle: visual effect):
+    set {_x} to {_b}.getX()
+    set {_y} to {_b}.getY()
+    set {_z} to {_b}.getZ()
+    if {_steps} <= 1:
+        set {_steps} to 1
+    loop {_steps} times:
+        set {_i} to loop-number - 1
+        if {_steps} > 1:
+            set {_t} to {_i} / ({_steps} - 1)
+        else:
+            set {_t} to 0
+        play {_particle} at location({_x}, {_y} + {_t}, {_z}) to {_p}
+        play {_particle} at location({_x} + 1, {_y} + {_t}, {_z}) to {_p}
+        play {_particle} at location({_x}, {_y} + {_t}, {_z} + 1) to {_p}
+        play {_particle} at location({_x} + 1, {_y} + {_t}, {_z} + 1) to {_p}
+        play {_particle} at location({_x} + {_t}, {_y}, {_z}) to {_p}
+        play {_particle} at location({_x} + {_t}, {_y}, {_z} + 1) to {_p}
+        play {_particle} at location({_x} + {_t}, {_y} + 1, {_z}) to {_p}
+        play {_particle} at location({_x} + {_t}, {_y} + 1, {_z} + 1) to {_p}
+        play {_particle} at location({_x}, {_y}, {_z} + {_t}) to {_p}
+        play {_particle} at location({_x} + 1, {_y}, {_z} + {_t}) to {_p}
+        play {_particle} at location({_x}, {_y} + 1, {_z} + {_t}) to {_p}
+        play {_particle} at location({_x} + 1, {_y} + 1, {_z} + {_t}) to {_p}

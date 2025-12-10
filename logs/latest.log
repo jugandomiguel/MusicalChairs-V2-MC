@@ -1,398 +1,423 @@
-[08:06:21] [ServerMain/INFO]: [bootstrap] Running Java 21 (OpenJDK 64-Bit Server VM 21.0.6+7-LTS; Eclipse Adoptium Temurin-21.0.6+7) on Windows 11 10.0 (amd64)
-[08:06:21] [ServerMain/INFO]: [bootstrap] Loading Paper 1.21.8-60-main@29c8822 (2025-09-06T21:49:13Z) for Minecraft 1.21.8
-[08:06:22] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
-[08:06:22] [ServerMain/INFO]: [PluginInitializerManager] Initialized 3 plugins
-[08:06:22] [ServerMain/INFO]: [PluginInitializerManager] Bukkit plugins (3):
- - SkBee (3.13.1), Skript (2.13.1), skript-yaml (1.7.2)
-[08:06:31] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[08:06:33] [ServerMain/INFO]: Loaded 1407 recipes
-[08:06:33] [ServerMain/INFO]: Loaded 1520 advancements
-[08:06:33] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
-[08:06:34] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 418,9ms
-[08:06:34] [Server thread/INFO]: Starting minecraft server version 1.21.8
-[08:06:34] [Server thread/INFO]: Loading properties
-[08:06:34] [Server thread/INFO]: This server is running Paper version 1.21.8-60-main@29c8822 (2025-09-06T21:49:13Z) (Implementing API version 1.21.8-R0.1-SNAPSHOT)
-[08:06:34] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
-[08:06:34] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[08:06:34] [Server thread/INFO]: Using 4 threads for Netty based IO
-[08:06:35] [Server thread/INFO]: [MoonriseCommon] Paper is using 4 worker threads, 1 I/O threads
-[08:06:35] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using population gen parallelism: true
-[08:06:35] [Server thread/INFO]: Default game type: SURVIVAL
-[08:06:35] [Server thread/INFO]: Generating keypair
-[08:06:35] [Server thread/INFO]: Starting Minecraft server on *:25565
-[08:06:36] [Server thread/INFO]: Using default channel type
-[08:06:36] [Server thread/INFO]: Paper: Using Java compression from Velocity.
-[08:06:36] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[08:06:36] [Server thread/INFO]: [Skript] Loading server plugin Skript v2.13.1
-[08:06:36] [Server thread/INFO]: [skript-yaml] Loading server plugin skript-yaml v1.7.2
-[08:06:36] [Server thread/INFO]: [SkBee] Loading server plugin SkBee v3.13.1
-[08:06:36] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[08:06:36] [Server thread/INFO]: Preparing level "world"
-[08:06:37] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[08:06:37] [Server thread/INFO]: Preparing spawn area: 0%
-[08:06:37] [Server thread/INFO]: Preparing spawn area: 2%
-[08:06:37] [Server thread/INFO]: Time elapsed: 875 ms
-[08:06:37] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[08:06:38] [Server thread/INFO]: Preparing spawn area: 0%
-[08:06:38] [Server thread/INFO]: Time elapsed: 186 ms
-[08:06:38] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[08:06:38] [Server thread/INFO]: Preparing spawn area: 0%
-[08:06:38] [Server thread/INFO]: Time elapsed: 218 ms
-[08:06:38] [Server thread/INFO]: [Skript] Enabling Skript v2.13.1
-[08:06:40] [ForkJoinPool.commonPool-worker-1/INFO]: [Skript] A new version of Skript is available: 2.13.2 (you're currently running 2.13.1)
-[08:06:40] [ForkJoinPool.commonPool-worker-1/INFO]: Download it at: https://github.com/SkriptLang/Skript/releases/download/2.13.2/Skript-2.13.2.jar
-[08:06:41] [Server thread/INFO]: [Skript]  ~ created by & © Peter Güttinger aka Njol ~
-[08:06:41] [Server thread/INFO]: [skript-yaml] Enabling skript-yaml v1.7.2
-[08:06:41] [Server thread/INFO]: [SkBee] Enabling SkBee v3.13.1
-[08:06:42] [Server thread/INFO]: [SkBee] Registry Elements successfully loaded
-[08:06:42] [ForkJoinPool.commonPool-worker-2/INFO]: [Skript-Yaml] Skript-Yaml is up to date!
-[08:06:42] [Server thread/INFO]: [SkBee] Loading NBTApi...
-[08:06:42] [Server thread/INFO]: [SkBee] [NBTAPI] Found Minecraft: 1.21.8! Trying to find NMS support
-[08:06:42] [Server thread/INFO]: [SkBee] [NBTAPI] NMS support 'MC1_21_R5' loaded!
-[08:06:42] [Server thread/INFO]: [SkBee] Successfully loaded NBTApi!
-[08:06:43] [Server thread/INFO]: [SkBee] NBT Elements successfully loaded
-[08:06:43] [Server thread/INFO]: [SkBee] Text Component Elements successfully loaded
-[08:06:43] [ForkJoinPool.commonPool-worker-1/INFO]: [Skript] Loaded 5504 aliases in 1446ms
-[08:06:43] [Server thread/INFO]: [SkBee] Advancement Elements successfully loaded
-[08:06:43] [Server thread/INFO]: [SkBee] BossBar Elements successfully loaded
-[08:06:43] [Server thread/INFO]: [SkBee] Bound Elements successfully loaded
-[08:06:43] [Server thread/INFO]: [SkBee] Damage Source Elements disabled (now in Skript)
-[08:06:43] [Server thread/INFO]: [SkBee] Display Entity Elements disabled via config
-[08:06:43] [Server thread/INFO]: [SkBee] Fastboard[Adventure] Elements successfully loaded
-[08:06:43] [Server thread/INFO]: [SkBee] Fishing Elements successfully loaded
-[08:06:43] [Server thread/INFO]: [SkBee] Game Event Elements successfully loaded
-[08:06:43] [Server thread/INFO]: [SkBee] Item Component Elements successfully loaded
-[08:06:43] [Server thread/INFO]: [SkBee] Particle Elements successfully loaded
-[08:06:43] [Server thread/INFO]: [SkBee] Property Elements successfully loaded
-[08:06:43] [Server thread/INFO]: [SkBee] RayTrace Elements successfully loaded
-[08:06:43] [Server thread/INFO]: [SkBee] Recipe Elements successfully loaded
-[08:06:43] [Server thread/INFO]: [SkBee] Scoreboard Elements successfully loaded
-[08:06:43] [Server thread/INFO]: [SkBee] Statistic Elements successfully loaded
-[08:06:43] [Server thread/INFO]: [SkBee] Structure Elements successfully loaded
-[08:06:43] [Server thread/INFO]: [SkBee] SwitchCase Elements successfully loaded
-[08:06:43] [Server thread/INFO]: [SkBee] Tick Manager Elements successfully loaded
-[08:06:43] [Server thread/INFO]: [SkBee] Villager Elements successfully loaded
-[08:06:43] [Server thread/INFO]: [SkBee] Virtual Furnace Elements disabled via config
-[08:06:43] [Server thread/INFO]: [SkBee] World Border Elements disabled (now in Skript)
-[08:06:43] [Server thread/INFO]: [SkBee] World Creator Elements successfully loaded
-[08:06:43] [Server thread/INFO]: [SkBee] Chunk Generator Elements successfully loaded
-[08:06:43] [Server thread/INFO]: [SkBee] Loaded (427) elements:
-[08:06:43] [Server thread/INFO]: [SkBee]  - 57 events
-[08:06:43] [Server thread/INFO]: [SkBee]  - 70 effects
-[08:06:43] [Server thread/INFO]: [SkBee]  - 243 expressions
-[08:06:43] [Server thread/INFO]: [SkBee]  - 25 conditions
-[08:06:43] [Server thread/INFO]: [SkBee]  - 32 sections
-[08:06:43] [Server thread/INFO]: [SkBee]  - 11 properties
-[08:06:43] [Server thread/INFO]: [SkBee] Checking for update...
-[08:06:43] [Server thread/INFO]: [SkBee] Plugin is not up to date!
-[08:06:43] [Server thread/INFO]: [SkBee]  - Current version: v3.13.1
-[08:06:43] [Server thread/INFO]: [SkBee]  - Available update: v3.13.3
-[08:06:43] [Server thread/INFO]: [SkBee]  - Download at: https://modrinth.com/plugin/skbee/version/3.13.3
-[08:06:43] [Server thread/INFO]: [SkBee] Successfully enabled v3.13.1 in 2,07 seconds
-[08:06:44] [Server thread/INFO]: [spark] Starting background profiler...
-[08:06:44] [Server thread/INFO]: [spark] The async-profiler engine is not supported for your os/arch (windows11/amd64), so the built-in Java engine will be used instead.
-[08:06:44] [Server thread/INFO]: Done preparing level "world" (8.104s)
-[08:06:44] [Server thread/INFO]: Running delayed init tasks
-[08:06:44] [Server thread/INFO]: [Skript] Loading variables...
-[08:06:44] [Server thread/INFO]: [Skript] Loaded 54 variables in 0.0 seconds
-[08:06:45] [Server thread/INFO]: [Skript] All scripts loaded without errors.
-[08:06:45] [Server thread/INFO]: [Skript] Loaded 1 script with a total of 7 structures in 0.6 seconds
-[08:06:45] [Server thread/INFO]: [Skript] Finished loading.
-[08:06:45] [Server thread/INFO]: Done (25.235s)! For help, type "help"
-[08:07:28] [User Authenticator #0/INFO]: UUID of player JugandoMiguel is 4dfe7a91-17b1-41b2-836e-c020f8a859fd
-[08:07:29] [Server thread/INFO]: JugandoMiguel joined the game
-[08:07:29] [Server thread/INFO]: JugandoMiguel[/127.0.0.1:49498] logged in with entity id 21 at ([world]24.038941450274542, 107.0, -0.2980646614179159)
-[08:09:30] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena add t1
-[08:09:37] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena add t1
-[08:09:47] [Server thread/INFO]: JugandoMiguel issued server command: /sk reload MusicalChairs.sk
-[08:09:49] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena add t1
-[08:11:13] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup
-[08:11:16] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena list
-[08:13:13] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:13:14] [Server thread/INFO]: Line 174: (MusicalChairs.sk)
-[08:13:14] [Server thread/INFO]:     This command doesn't have any arguments
-[08:13:14] [Server thread/INFO]:     Line: loop yaml node keys "arenas.%arg-3%" from "config":
-[08:13:14] [Server thread/INFO]:  
-[08:13:14] [Server thread/INFO]:     Encountered 1 error while reloading MusicalChairs.sk! (167ms)
-[08:13:35] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:13:35] [Server thread/INFO]: Line 172: (MusicalChairs.sk)
-[08:13:35] [Server thread/INFO]:     A command with the name /test is already defined in MusicalChairs.sk
-[08:13:35] [Server thread/INFO]:     Line: command /test [<string>]:
-[08:13:35] [Server thread/INFO]:  
-[08:13:35] [Server thread/INFO]:     Encountered 1 error while reloading MusicalChairs.sk! (87ms)
-[08:13:57] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:13:57] [Server thread/INFO]: Line 16: (MusicalChairs.sk)
-[08:13:57] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
-[08:13:57] [Server thread/INFO]:     Line: loop yaml node keys "arenas.%arg-3%" from "config":
-[08:13:57] [Server thread/INFO]:  
-[08:13:57] [Server thread/INFO]: Line 16: (MusicalChairs.sk)
-[08:13:57] [Server thread/INFO]:     This command doesn't have any arguments
-[08:13:57] [Server thread/INFO]:     Line: loop yaml node keys "arenas.%arg-3%" from "config":
-[08:13:57] [Server thread/INFO]:  
-[08:13:57] [Server thread/ERROR]: [skript-yaml] There's no loop that matches 'loop-id' [script: MusicalChairs.sk, line: 17 : 'broadcast yaml value "%loop-node%" from "%loop-id%"']
-[08:13:57] [Server thread/ERROR]: [skript-yaml] There's no loop that matches 'loop-id' [script: MusicalChairs.sk, line: 17 : 'broadcast yaml value "%loop-node%" from "%loop-id%"']
-[08:13:57] [Server thread/ERROR]: [skript-yaml] There's no loop that matches 'loop-id' [script: MusicalChairs.sk, line: 17 : 'broadcast yaml value "%loop-node%" from "%loop-id%"']
-[08:13:57] [Server thread/ERROR]: [skript-yaml] There's no loop that matches 'loop-id' [script: MusicalChairs.sk, line: 17 : 'broadcast yaml value "%loop-node%" from "%loop-id%"']
-[08:13:57] [Server thread/INFO]: Line 17: (MusicalChairs.sk)
-[08:13:57] [Server thread/INFO]:     There's no loop that matches 'loop-id'
-[08:13:57] [Server thread/INFO]:     Line: broadcast yaml value "%loop-node%" from "%loop-id%"
-[08:13:57] [Server thread/INFO]:  
-[08:13:57] [Server thread/INFO]:     Encountered 2 errors while reloading MusicalChairs.sk! (144ms)
-[08:14:15] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:14:15] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (87ms)
-[08:14:20] [Server thread/INFO]: JugandoMiguel issued server command: /test
-[08:14:20] [Server thread/INFO]: [0]
-[08:14:35] [Server thread/INFO]: JugandoMiguel issued server command: /sk reload MusicalChairs.sk
-[08:14:36] [Server thread/INFO]: JugandoMiguel issued server command: /test
-[08:14:36] [Server thread/INFO]: [2]
-[08:15:35] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:15:35] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (82ms)
-[08:15:37] [Server thread/INFO]: JugandoMiguel issued server command: /sk reload MusicalChairs.sk
-[08:15:38] [Server thread/INFO]: JugandoMiguel issued server command: /test
-[08:15:38] [Server thread/INFO]: [2]
-[08:15:38] [Server thread/INFO]: t1
-[08:16:19] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:16:19] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (114ms)
-[08:16:33] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:16:33] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (89ms)
-[08:16:37] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setu
-[08:16:55] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:16:55] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (87ms)
-[08:17:04] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena add t2
-[08:17:05] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena add t3
-[08:17:06] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena add t3
-[08:17:07] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena add t4
-[08:17:08] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena add t5
-[08:18:37] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:18:37] [Server thread/INFO]: Line 144: (MusicalChairs.sk)
-[08:18:37] [Server thread/INFO]:     Cannot recognise the type 'list'
-[08:18:37] [Server thread/INFO]:     Line: function getArenas() :: list:
-[08:18:37] [Server thread/INFO]:  
-[08:18:37] [Server thread/INFO]:     Encountered 1 error while reloading MusicalChairs.sk! (79ms)
-[08:18:45] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:18:45] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (74ms)
-[08:19:05] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:19:05] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (82ms)
-[08:19:37] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:19:37] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (89ms)
-[08:19:41] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena add t1
-[08:20:22] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:20:22] [Server thread/INFO]: Line 43: (MusicalChairs.sk)
-[08:20:22] [Server thread/INFO]:     Can't understand this section: getArenas() arg-3
-[08:20:22] [Server thread/INFO]:     Line: getArenas() arg-3:
-[08:20:22] [Server thread/INFO]:  
-[08:20:22] [Server thread/INFO]: Line 48: (MusicalChairs.sk)
-[08:20:22] [Server thread/INFO]:     'else' has to be placed just after another 'if' or 'else if' section
-[08:20:22] [Server thread/INFO]:     Line: else:
-[08:20:22] [Server thread/INFO]:  
-[08:20:22] [Server thread/INFO]:     Encountered 2 errors while reloading MusicalChairs.sk! (91ms)
-[08:21:00] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:21:00] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (101ms)
-[08:21:03] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena list
-[08:21:22] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:21:22] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (93ms)
-[08:21:23] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena list
-[08:21:32] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:21:32] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (89ms)
-[08:21:33] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena list
-[08:21:41] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena add t1
-[08:21:45] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena remove t1
-[08:21:45] [Server thread/WARN]: [skript-yaml] There is no list at path 'arenas' in yaml 'config' [script: MusicalChairs.sk, line: 44]
-[08:22:18] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:22:18] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (105ms)
-[08:22:22] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena remove t1
-[08:22:28] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena remove t1
-[08:22:36] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena add t1
-[08:22:39] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1
-[08:23:02] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:23:02] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (83ms)
-[08:23:04] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1
-[08:28:33] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:28:34] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (85ms)
-[08:28:49] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:28:49] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (109ms)
-[08:28:51] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1
-[08:28:58] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1 cancel
-[08:29:19] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1 cancel
-[08:29:43] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:29:43] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (95ms)
-[08:29:44] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1 cancel
-[08:30:19] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:30:19] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (79ms)
-[08:30:21] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1 cancel
-[08:30:21] [Server thread/INFO]: JugandoMiguel
-[08:30:21] [Server thread/INFO]: t1
-[08:31:09] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1
-[08:31:19] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1 save
-[08:31:19] [Server thread/INFO]: t1
-[08:31:19] [Server thread/WARN]: [skript-yaml] The node 't1' likely contains a value therefore the node 'arenas.t1.spawn' does not exist [script: MusicalChairs.sk, line: 124]
-[08:32:09] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:32:09] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (84ms)
-[08:32:11] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1 save
-[08:32:15] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1
-[08:32:18] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1 save
-[08:32:18] [Server thread/INFO]: t1
-[08:32:18] [Server thread/WARN]: [skript-yaml] The node 't1' likely contains a value therefore the node 'arenas.t1.spawn' does not exist [script: MusicalChairs.sk, line: 122]
-[08:33:28] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1
-[08:33:52] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:33:52] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (99ms)
-[08:33:55] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena remove t1
-[08:33:57] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena add t1
-[08:34:21] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:34:21] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (110ms)
-[08:34:25] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena remove t1
-[08:34:25] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena add t1
-[08:34:46] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:34:46] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (101ms)
-[08:34:51] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena remove t1
-[08:34:52] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena add t1
-[08:35:32] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:35:32] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (86ms)
-[08:35:35] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena remove t1
-[08:35:37] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena add t1
-[08:40:10] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:40:10] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (144ms)
-[08:40:16] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena remove t1
-[08:40:16] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena add t1
-[08:41:00] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:41:00] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (86ms)
-[08:41:03] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena remove t1
-[08:41:04] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena add t1
-[08:42:51] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:42:51] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (72ms)
-[08:43:00] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1 save
-[08:43:00] [Server thread/INFO]: t1
-[08:43:21] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:43:21] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (75ms)
-[08:43:28] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1
-[08:44:15] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:44:15] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (78ms)
-[08:44:20] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1 save
-[08:44:20] [Server thread/INFO]: t1
-[08:45:27] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:45:27] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (112ms)
-[08:45:33] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena remove t1
-[08:45:41] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena add t1
-[08:45:45] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1
-[08:46:04] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1 save
-[08:46:04] [Server thread/INFO]: t1
-[08:46:59] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:46:59] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (107ms)
-[08:47:02] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1
-[08:47:23] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1 save
-[08:47:23] [Server thread/INFO]: t1
-[08:47:52] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:47:52] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (81ms)
-[08:47:57] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1 save
-[08:47:59] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1
-[08:48:01] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1 save
-[08:48:01] [Server thread/INFO]: t1
-[08:49:30] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:49:32] [Server thread/INFO]: Line 183: (MusicalChairs.sk)
-[08:49:32] [Server thread/INFO]:     Can't understand this condition/effect: set {musicalchairs.arena.setup.%{_arena}%.spawn::*} to [event-block's x-coord,event-block's y-coord,event-block's z-coord]
-[08:49:32] [Server thread/INFO]:     Line: set {musicalchairs.arena.setup.%{_arena}%.spawn::*} to [event-block's x-coord,event-block's y-coord,event-block's z-coord]
-[08:49:32] [Server thread/INFO]:  
-[08:49:32] [Server thread/INFO]: Line 189: (MusicalChairs.sk)
-[08:49:32] [Server thread/INFO]:     Can't understand this condition/effect: set {musicalchairs.arena.setup.%{_arena}%.arena_center::*} to [event-block's x-coord,event-block's y-coord,event-block's z-coord]
-[08:49:32] [Server thread/INFO]:     Line: set {musicalchairs.arena.setup.%{_arena}%.arena_center::*} to [event-block's x-coord,event-block's y-coord,event-block's z-coord]
-[08:49:32] [Server thread/INFO]:  
-[08:49:32] [Server thread/INFO]: Line 195: (MusicalChairs.sk)
-[08:49:32] [Server thread/INFO]:     Can't understand this condition/effect: set {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos1::*} to [event-block's x-coord,event-block's y-coord,event-block's z-coord]
-[08:49:32] [Server thread/INFO]:     Line: set {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos1::*} to [event-block's x-coord,event-block's y-coord,event-block's z-coord]
-[08:49:32] [Server thread/INFO]:  
-[08:49:32] [Server thread/INFO]: Line 201: (MusicalChairs.sk)
-[08:49:32] [Server thread/INFO]:     Can't understand this condition/effect: set {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos1::*} to [event-block's x-coord,event-block's y-coord,event-block's z-coord]
-[08:49:32] [Server thread/INFO]:     Line: set {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos1::*} to [event-block's x-coord,event-block's y-coord,event-block's z-coord]
-[08:49:32] [Server thread/INFO]:  
-[08:49:34] [Server thread/INFO]: Line 209: (MusicalChairs.sk)
-[08:49:34] [Server thread/INFO]:     Can't understand this condition/effect: set {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos2::*} to [event-block's x-coord,event-block's y-coord,event-block's z-coord]
-[08:49:34] [Server thread/INFO]:     Line: set {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos2::*} to [event-block's x-coord,event-block's y-coord,event-block's z-coord]
-[08:49:34] [Server thread/INFO]:  
-[08:49:34] [Server thread/INFO]: Line 215: (MusicalChairs.sk)
-[08:49:34] [Server thread/INFO]:     Can't understand this condition/effect: set {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos2::*} to [event-block's x-coord,event-block's y-coord,event-block's z-coord]
-[08:49:34] [Server thread/INFO]:     Line: set {musicalchairs.arena.setup.%{_arena}%.lobby_boundaries.pos2::*} to [event-block's x-coord,event-block's y-coord,event-block's z-coord]
-[08:49:34] [Server thread/INFO]:  
-[08:49:34] [Server thread/INFO]:     Encountered 6 errors while reloading MusicalChairs.sk! (3841ms)
-[08:49:34] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 3792ms or 75 ticks behind
-[08:50:38] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:50:46] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (8870ms)
-[08:50:46] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 8821ms or 176 ticks behind
-[08:51:53] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:51:53] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (76ms)
-[08:54:31] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:54:31] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (77ms)
-[08:54:38] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1
-[08:54:48] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1 save
-[08:54:48] [Server thread/INFO]: t1
-[08:55:02] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:55:02] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (84ms)
-[08:55:04] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1
-[08:55:06] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1 save
-[08:55:06] [Server thread/INFO]: t1
-[08:56:30] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:56:30] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (98ms)
-[08:56:39] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1
-[08:56:40] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1 save
-[08:56:40] [Server thread/INFO]: t1
-[08:56:42] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1
-[08:56:43] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1 save
-[08:56:43] [Server thread/INFO]: t1
-[08:57:59] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:57:59] [Server thread/INFO]: Line 127: (MusicalChairs.sk)
-[08:57:59] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
-[08:57:59] [Server thread/INFO]:     Line: if {musicalchairs.arena.setup.%{_arena}%.arena_center::1} is set:
-[08:57:59] [Server thread/INFO]:  
-[08:57:59] [Server thread/INFO]: Line 131: (MusicalChairs.sk)
-[08:57:59] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
-[08:57:59] [Server thread/INFO]:     Line: if {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos1::*} is set:
-[08:57:59] [Server thread/INFO]:  
-[08:57:59] [Server thread/INFO]: Line 138: (MusicalChairs.sk)
-[08:57:59] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
-[08:57:59] [Server thread/INFO]:     Line: if {musicalchairs.arena.setup.%{_arena}%.arena_boundaries.pos2::*} is set:
-[08:57:59] [Server thread/INFO]:  
-[08:57:59] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (85ms)
-[08:58:25] [Server thread/INFO]: [Skript] Reloading MusicalChairs.sk...
-[08:58:25] [Server thread/INFO]: Successfully reloaded MusicalChairs.sk. (81ms)
-[08:58:29] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1
-[08:58:44] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1 save
-[08:58:47] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1
-[08:58:48] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena setup t1 save
-[09:01:51] [Server thread/INFO]: JugandoMiguel issued server command: /stop
-[09:01:51] [Server thread/INFO]: [JugandoMiguel: Stopping the server]
-[09:01:51] [Server thread/INFO]: Stopping server
-[09:01:51] [Server thread/INFO]: [SkBee] Disabling SkBee v3.13.1
-[09:01:51] [Server thread/INFO]: [skript-yaml] Disabling skript-yaml v1.7.2
-[09:01:51] [Server thread/INFO]: [Skript] Disabling Skript v2.13.1
-[09:01:51] [Server thread/INFO]: Saving players
-[09:01:51] [Server thread/INFO]: JugandoMiguel lost connection: Server closed
-[09:01:51] [Server thread/INFO]: JugandoMiguel left the game
-[09:01:51] [Server thread/INFO]: Saving worlds
-[09:01:51] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[09:01:51] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
-[09:01:51] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
-[09:01:51] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
-[09:01:51] [Server thread/INFO]: [ChunkHolderManager] Saved 39 block chunks, 135 entity chunks, 0 poi chunks in world 'world' in 0,05s
-[09:01:51] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'world'
-[09:01:51] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'world'
-[09:01:51] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
-[09:01:51] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
-[09:01:51] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
-[09:01:51] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
-[09:01:51] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 1 entity chunks, 0 poi chunks in world 'world_nether' in 0,00s
-[09:01:51] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'world_nether'
-[09:01:51] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'world_nether'
-[09:01:51] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
-[09:01:51] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
-[09:01:51] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
-[09:01:51] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
-[09:01:51] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 10 entity chunks, 0 poi chunks in world 'world_the_end' in 0,01s
-[09:01:51] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'world_the_end'
-[09:01:51] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'world_the_end'
-[09:01:51] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[09:01:51] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[09:01:51] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[09:01:51] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[09:01:51] [Server thread/INFO]: Waiting for all RegionFile I/O tasks to complete...
-[09:01:51] [Server thread/INFO]: All RegionFile I/O tasks to complete
-[09:01:51] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of worker pool for up to 60s...
-[09:01:51] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of I/O pool for up to 60s...
+[10:56:18] [ServerMain/INFO]: [bootstrap] Running Java 21 (OpenJDK 64-Bit Server VM 21.0.6+7-LTS; Eclipse Adoptium Temurin-21.0.6+7) on Windows 11 10.0 (amd64)
+[10:56:18] [ServerMain/INFO]: [bootstrap] Loading Paper 1.21.8-60-main@29c8822 (2025-09-06T21:49:13Z) for Minecraft 1.21.8
+[10:56:19] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
+[10:56:21] [ServerMain/INFO]: [MavenLibraryResolver] Downloading https://repo.papermc.io/repository/maven-public/org/jetbrains/kotlin/kotlin-stdlib/unspecified/kotlin-stdlib-unspecified.pom
+[10:56:22] [ServerMain/INFO]: [MavenLibraryResolver] Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/unspecified/kotlin-stdlib-unspecified.pom
+[10:56:23] [ServerMain/INFO]: [MavenLibraryResolver] Downloading https://repo.papermc.io/repository/maven-public/org/jetbrains/kotlin/kotlin-reflect/unspecified/kotlin-reflect-unspecified.pom
+[10:56:23] [ServerMain/INFO]: [MavenLibraryResolver] Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-reflect/unspecified/kotlin-reflect-unspecified.pom
+[10:56:25] [ServerMain/INFO]: [PluginInitializerManager] Initialized 12 plugins
+[10:56:25] [ServerMain/INFO]: [PluginInitializerManager] Paper plugins (4):
+ - BetterModel (1.14.2), CommandPanels (4.1.4), LiteEco (1.6.7-SNAPSHOT), Nexo (1.15)
+[10:56:25] [ServerMain/INFO]: [PluginInitializerManager] Bukkit plugins (8):
+ - BetterHud (1.14.0), Multiverse-Core (5.3.4), PlaceholderAPI (2.11.7), SkBee (3.13.3), Skript (2.13.2), Vault (1.7.3-b131), skript-reflect (2.6.1), skript-yaml (1.7.2)
+[10:56:32] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[10:56:35] [ServerMain/INFO]: Loaded 1407 recipes
+[10:56:36] [ServerMain/INFO]: Loaded 1520 advancements
+[10:56:36] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
+[10:56:36] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 435,8ms
+[10:56:36] [Server thread/INFO]: Starting minecraft server version 1.21.8
+[10:56:36] [Server thread/INFO]: Loading properties
+[10:56:36] [Server thread/INFO]: This server is running Paper version 1.21.8-60-main@29c8822 (2025-09-06T21:49:13Z) (Implementing API version 1.21.8-R0.1-SNAPSHOT)
+[10:56:36] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
+[10:56:36] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[10:56:36] [Server thread/INFO]: Using 4 threads for Netty based IO
+[10:56:37] [Server thread/INFO]: [MoonriseCommon] Paper is using 4 worker threads, 1 I/O threads
+[10:56:37] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using population gen parallelism: true
+[10:56:37] [Server thread/INFO]: Default game type: SURVIVAL
+[10:56:37] [Server thread/INFO]: Generating keypair
+[10:56:37] [Server thread/INFO]: Starting Minecraft server on *:25565
+[10:56:37] [Server thread/INFO]: Using default channel type
+[10:56:37] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[10:56:37] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[10:56:39] [Server thread/INFO]: [Vault] Loading server plugin Vault v1.7.3-b131
+[10:56:39] [Server thread/INFO]: [Skript] Loading server plugin Skript v2.13.2
+[10:56:39] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.7
+[10:56:39] [Server thread/INFO]: [skript-reflect] Loading server plugin skript-reflect v2.6.1
+[10:56:39] [Server thread/INFO]: [Nexo] Loading server plugin Nexo v1.15
+[10:56:39] [Server thread/INFO]: [SkBee] Loading server plugin SkBee v3.13.3
+[10:56:39] [Server thread/INFO]: [BetterModel] Loading server plugin BetterModel v1.14.2
+[10:56:39] [Server thread/INFO]: [skript-yaml] Loading server plugin skript-yaml v1.7.2
+[10:56:39] [Server thread/INFO]: [CoreLogging] Loading server plugin Multiverse-Core v5.3.4
+[10:56:39] [Server thread/INFO]: [LiteEco] Loading server plugin LiteEco v1.6.7-SNAPSHOT
+[10:56:39] [Server thread/INFO]: [LiteEco] Resource database.db exists [!]
+[10:56:39] [Server thread/INFO]: [LiteEco] ✅ Translation loaded: en_us.yml
+[10:56:40] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] LiteEco - Starting...
+[10:56:40] [Server thread/INFO]: [com.zaxxer.hikari.pool.HikariPool] LiteEco - Added connection org.sqlite.jdbc4.JDBC4Connection@44f9298f
+[10:56:40] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] LiteEco - Start completed.
+[10:56:40] [Server thread/INFO]: [org.flywaydb.core.FlywayExecutor] Database: jdbc:sqlite:plugins/LiteEco/database.db (SQLite 3.49)
+[10:56:40] [Server thread/INFO]: [org.flywaydb.core.internal.command.DbValidate] Successfully validated 0 migrations (execution time 00:00.017s)
+[10:56:40] [Server thread/WARN]: [org.flywaydb.core.internal.command.DbValidate] No migrations found. Are your locations set up correctly?
+[10:56:40] [Server thread/INFO]: [org.flywaydb.core.internal.command.DbMigrate] Current version of schema "main": << Empty Schema >>
+[10:56:40] [Server thread/INFO]: [org.flywaydb.core.internal.command.DbMigrate] Schema "main" is up to date. No migration necessary.
+[10:56:41] [Server thread/INFO]: [LiteEco] ✅ Database connection established successfully.
+[10:56:41] [Server thread/INFO]: [CommandPanels] Loading server plugin CommandPanels v4.1.4
+[10:56:41] [Server thread/INFO]: [BetterHud] Loading server plugin BetterHud v1.14.0
+[10:56:41] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[10:56:41] [Server thread/INFO]: [Vault] Enabling Vault v1.7.3-b131
+[10:56:41] [Server thread/INFO]: [Vault] [Permission] SuperPermissions loaded as backup permission system.
+[10:56:41] [Server thread/INFO]: [Vault] Enabled Version 1.7.3-b131
+[10:56:41] [Server thread/INFO]: [LiteEco] Enabling LiteEco v1.6.7-SNAPSHOT
+[10:56:41] [Server thread/INFO]: [LiteEco] This plugins can't be used 
+[Towny] (1) with LiteEco.
+[10:56:41] [Server thread/INFO]: [LiteEco] This is not a bug. Please don't report issue !!!
+[10:56:41] [Server thread/INFO]: [LiteEco] Registering 8 hooks...
+[10:56:41] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: liteeco [2.0.5]
+[10:56:41] [Server thread/INFO]: [LiteEco] PlaceholderAPI found hook PlaceholderAPIHook registered !.
+[10:56:41] [Server thread/INFO]: [LiteEco] You can now use placeholders from https://github.com/EncryptSL/LiteEco/wiki/Placeholders#papi-available-placeholders
+[10:56:41] [Server thread/INFO]: [LiteEco] Vault found hook VaultHook registered !.
+[10:56:41] [Server thread/INFO]: [LiteEco] You can now use Vault API !
+[10:56:41] [Server thread/INFO]: [LiteEco] Registered 2 of 8 hooks took 10 ms
+[10:56:42] [Server thread/INFO]: [LiteEco] Registering commands with Cloud Command Framework !
+[10:56:42] [Server thread/INFO]: [LiteEco] Registering (2) of listeners took 3 ms -> ok
+[10:56:42] [Server thread/INFO]: [LiteEco] Config was updated on current version !
+[10:56:42] [Server thread/INFO]: [LiteEco] Contribute to other updates https://ko-fi.com/encryptsl
+[10:56:42] [Server thread/INFO]: [LiteEco] Plugin enabled in time 1100 ms
+[10:56:42] [Server thread/INFO]: Preparing level "world"
+[10:56:43] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[10:56:43] [Server thread/INFO]: Preparing spawn area: 0%
+[10:56:43] [DefaultDispatcher-worker-3/INFO]: [LiteEco] You are using the current version!
+[10:56:44] [Server thread/INFO]: Preparing spawn area: 42%
+[10:56:44] [Server thread/INFO]: Time elapsed: 976 ms
+[10:56:44] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[10:56:44] [Server thread/INFO]: Preparing spawn area: 0%
+[10:56:44] [Server thread/INFO]: Time elapsed: 140 ms
+[10:56:44] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[10:56:44] [Server thread/INFO]: Preparing spawn area: 0%
+[10:56:44] [Server thread/INFO]: Time elapsed: 93 ms
+[10:56:44] [Server thread/INFO]: [Skript] Enabling Skript v2.13.2
+[10:56:46] [ForkJoinPool.commonPool-worker-1/INFO]: [Skript] You're currently running the latest stable version of Skript.
+[10:56:47] [Server thread/INFO]: [Skript]  ~ created by & © Peter Güttinger aka Njol ~
+[10:56:47] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.7
+[10:56:48] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[10:56:48] [Server thread/INFO]: [skript-reflect] Enabling skript-reflect v2.6.1
+[10:56:48] [Server thread/INFO]: [Nexo] Enabling Nexo v1.15
+[10:56:48] [Server thread/INFO]: Nexo | NMS-Version v1_21_R6 has been detected.
+[10:56:49] [ForkJoinPool.commonPool-worker-4/INFO]: Nexo | Skipped downloading DefaultPack as it is up to date!
+[10:56:49] [Server thread/INFO]: Nexo | Papers block-updates.disable-noteblock-updates is not enabled.
+[10:56:49] [Server thread/INFO]: Nexo | It is HIGHLY recommended to enable this setting for improved performance and prevent bugs with noteblocks
+[10:56:49] [Server thread/INFO]: Nexo | Otherwise Nexo needs to listen to very taxing events, which also introduces some bugs
+[10:56:49] [Server thread/INFO]: Nexo | You can enable this setting in ServerFolder/config/paper-global.yml
+
+[10:56:49] [Server thread/INFO]: Nexo | Papers block-updates.disable-tripwire-updates is not enabled.
+[10:56:49] [Server thread/INFO]: Nexo | It is HIGHLY recommended to enable this setting for improved performance and prevent bugs with tripwires
+[10:56:49] [Server thread/INFO]: Nexo | Otherwise Nexo needs to listen to very taxing events, which also introduces some bugs
+[10:56:49] [Server thread/INFO]: Nexo | You can enable this setting in ServerFolder/config/paper-global.yml
+
+[10:56:49] [Server thread/INFO]: Nexo | Papers block-updates.disable-chorus-plant-updates is not enabled.
+[10:56:49] [Server thread/INFO]: Nexo | It is HIGHLY recommended to enable this setting for improved performance and prevent bugs with chorus-plants
+[10:56:49] [Server thread/INFO]: Nexo | Otherwise Nexo needs to listen to very taxing events, which also introduces some bugs
+[10:56:49] [Server thread/INFO]: Nexo | You can enable this setting in ServerFolder/config/paper-global.yml
+
+[10:56:49] [ForkJoinPool.commonPool-worker-1/INFO]: [Skript] Loaded 5504 aliases in 1637ms
+[10:56:49] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: nexo [1.15]
+[10:56:49] [Server thread/INFO]: Nexo | Plugin "PlaceholderAPI" detected, enabling hooks
+[10:56:49] [Server thread/INFO]: [SkBee] Enabling SkBee v3.13.3
+[10:56:49] [Server thread/INFO]: [SkBee] Registry Elements successfully loaded
+[10:56:49] [Server thread/INFO]: [SkBee] Loading NBTApi...
+[10:56:49] [Server thread/INFO]: [SkBee] [NBTAPI] Found Minecraft: 1.21.8! Trying to find NMS support
+[10:56:49] [Server thread/INFO]: [SkBee] [NBTAPI] NMS support 'MC1_21_R5' loaded!
+[10:56:49] [Server thread/INFO]: [SkBee] Successfully loaded NBTApi!
+[10:56:50] [Server thread/INFO]: [SkBee] NBT Elements successfully loaded
+[10:56:50] [Server thread/INFO]: [SkBee] Text Component Elements successfully loaded
+[10:56:50] [Server thread/INFO]: [SkBee] Advancement Elements successfully loaded
+[10:56:50] [Server thread/INFO]: [SkBee] BossBar Elements successfully loaded
+[10:56:50] [Server thread/INFO]: [SkBee] Bound Elements successfully loaded
+[10:56:50] [Server thread/INFO]: [SkBee] Damage Source Elements disabled (now in Skript)
+[10:56:50] [Server thread/INFO]: [SkBee] Display Entity Elements disabled via config
+[10:56:50] [Server thread/INFO]: [SkBee] Fastboard[Adventure] Elements successfully loaded
+[10:56:50] [Server thread/INFO]: [SkBee] Fishing Elements successfully loaded
+[10:56:50] [Server thread/INFO]: [SkBee] Game Event Elements successfully loaded
+[10:56:50] [Server thread/INFO]: [SkBee] Item Component Elements successfully loaded
+[10:56:50] [Server thread/INFO]: [SkBee] Particle Elements successfully loaded
+[10:56:50] [Server thread/INFO]: [SkBee] Property Elements successfully loaded
+[10:56:50] [Server thread/INFO]: [SkBee] RayTrace Elements successfully loaded
+[10:56:50] [Server thread/INFO]: [SkBee] Recipe Elements successfully loaded
+[10:56:50] [Server thread/INFO]: [SkBee] Scoreboard Elements successfully loaded
+[10:56:50] [Server thread/INFO]: [SkBee] Statistic Elements successfully loaded
+[10:56:50] [Server thread/INFO]: [SkBee] Structure Elements successfully loaded
+[10:56:50] [Server thread/INFO]: [SkBee] SwitchCase Elements successfully loaded
+[10:56:50] [Server thread/INFO]: [SkBee] Tick Manager Elements successfully loaded
+[10:56:50] [Server thread/INFO]: [SkBee] Villager Elements successfully loaded
+[10:56:50] [Server thread/INFO]: [SkBee] Virtual Furnace Elements disabled via config
+[10:56:50] [Server thread/INFO]: [SkBee] World Border Elements disabled (now in Skript)
+[10:56:50] [Server thread/INFO]: [SkBee] World Creator Elements successfully loaded
+[10:56:50] [Server thread/INFO]: [SkBee] Chunk Generator Elements successfully loaded
+[10:56:50] [Server thread/INFO]: [SkBee] Loaded (428) elements:
+[10:56:50] [Server thread/INFO]: [SkBee]  - 57 events
+[10:56:50] [Server thread/INFO]: [SkBee]  - 70 effects
+[10:56:50] [Server thread/INFO]: [SkBee]  - 243 expressions
+[10:56:50] [Server thread/INFO]: [SkBee]  - 26 conditions
+[10:56:50] [Server thread/INFO]: [SkBee]  - 32 sections
+[10:56:50] [Server thread/INFO]: [SkBee]  - 11 properties
+[10:56:50] [Server thread/INFO]: [SkBee] Checking for update...
+[10:56:50] [Server thread/INFO]: [SkBee] Plugin is not up to date!
+[10:56:50] [Server thread/INFO]: [SkBee]  - Current version: v3.13.3
+[10:56:50] [Server thread/INFO]: [SkBee]  - Available update: v3.14.0
+[10:56:50] [Server thread/INFO]: [SkBee]  - Download at: https://modrinth.com/plugin/skbee/version/3.14.0
+[10:56:50] [Server thread/INFO]: [SkBee] Successfully enabled v3.13.3 in 1,16 seconds
+[10:56:50] [Server thread/INFO]: [BetterModel] Enabling BetterModel v1.14.2
+[10:56:50] [Server thread/INFO]: [BetterModel] Plugin hooks Nexo
+[10:56:50] [Server thread/INFO]: [skript-yaml] Enabling skript-yaml v1.7.2
+[10:56:50] [Server thread/INFO]: [Multiverse-Core] Enabling Multiverse-Core v5.3.4
+[10:56:51] [ForkJoinPool.commonPool-worker-2/INFO]: [Skript-Yaml] Skript-Yaml is up to date!
+[10:56:52] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: multiverse-core [5.3.4]
+[10:56:52] [Server thread/INFO]: [Multiverse-Core] API service loaded!
+[10:56:52] [Server thread/INFO]: [Multiverse-Core] Version 5.3.4 (API v5.3) Enabled - By dumptruckman, Rigby, fernferret, lithium3141, main--, benwoo1110 and Zax71
+[10:56:52] [Server thread/INFO]: [Multiverse-Core] Loving Multiverse-Core? Please consider supporting the project with a small donation: https://github.com/sponsors/Multiverse
+[10:56:52] [Server thread/INFO]: [CommandPanels] Enabling CommandPanels v4.1.4
+[10:56:52] [Server thread/INFO]: [CommandPanels] RockyHawk's CommandPanels v4.1.4 Plugin Loading...
+[10:56:52] [Server thread/INFO]: [CommandPanels] RockyHawk's CommandPanels v4.1.4 Plugin Loaded!
+[10:56:52] [Server thread/INFO]: [BetterHud] Enabling BetterHud v1.14.0
+[10:56:54] [Server thread/INFO]: [spark] Starting background profiler...
+[10:56:54] [Server thread/INFO]: [spark] The async-profiler engine is not supported for your os/arch (windows11/amd64), so the built-in Java engine will be used instead.
+[10:56:54] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[10:56:54] [Server thread/INFO]: 0 placeholder hook(s) registered!
+[10:56:54] [Server thread/INFO]: [BetterHud] Minecraft version: 1.21.8, NMS version: V1_21_R5
+[10:56:54] [Server thread/INFO]: [BetterHud] Platform: Paper
+[10:56:54] [Server thread/INFO]: [BetterHud] Plugin enabled.
+[10:56:54] [Server thread/INFO]: Done preparing level "world" (11.514s)
+[10:56:54] [Server thread/INFO]: Running delayed init tasks
+[10:56:54] [Server thread/INFO]: [Skript] Loading variables...
+[10:56:54] [Server thread/INFO]: [Skript] Loaded 179 variables in 0.1 seconds
+[10:56:54] [Server thread/INFO]: [Skript] Line 365: (MusicalChairs.sk)
+[10:56:54] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
+[10:56:54] [Server thread/INFO]:     Line: function loadArena(arena: string):
+[10:56:54] [Server thread/INFO]:  
+[10:56:57] [Server thread/INFO]: [Skript] All scripts loaded without errors.
+[10:56:57] [Server thread/INFO]: [Skript] Loaded 1 script with a total of 10 structures in 2.79 seconds
+[10:56:57] [Server thread/INFO]: [Skript] Finished loading.
+[10:56:57] [Server thread/INFO]: Nexo | PackServer set to POLYMATH
+[10:56:58] [Server thread/INFO]: [BetterModel] Successfully merged with Nexo.
+[10:57:01] [Server thread/INFO]: [BetterHud] Successfully merged with Nexo.
+[10:57:01] [ForkJoinPool.commonPool-worker-2/INFO]: Nexo | Generating resourcepack...
+[10:57:01] [Server thread/INFO]: Done (44.697s)! For help, type "help"
+[10:57:01] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 6906ms or 138 ticks behind
+[10:57:01] [Craft Scheduler Thread - 1 - Vault/INFO]: [Vault] Checking for Updates ... 
+[10:57:01] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: commandpanels [4.1.4]
+[10:57:01] [ForkJoinPool.commonPool-worker-2/INFO]: Nexo | Importing DefaultPack...
+[10:57:01] [ForkJoinPool.commonPool-worker-2/INFO]: Nexo | Importing external-pack 2DPlayerHeads...
+[10:57:01] [ForkJoinPool.commonPool-worker-2/INFO]: Nexo | Validating ResourcePack files...
+[10:57:01] [Craft Scheduler Thread - 1 - Vault/INFO]: [Vault] No new version available
+[10:57:03] [ForkJoinPool.commonPool-worker-2/INFO]: Nexo | Copied generated ResourcePack to plugins\Nexo\pack\pack.zip
+
+[10:57:03] [ForkJoinPool.commonPool-worker-2/INFO]: Nexo | Finished generating resourcepack!
+
+[10:57:11] [ForkJoinPool.commonPool-worker-1/INFO]: Nexo | ResourcePack has been uploaded to https://atlas.nexomc.com/pack.zip?id=707dd474a078b66ab0408a1a7efbaa9fe758d351
+[11:05:00] [User Authenticator #0/INFO]: UUID of player JugandoMiguel is 4dfe7a91-17b1-41b2-836e-c020f8a859fd
+[11:05:05] [Server thread/INFO]: JugandoMiguel joined the game
+[11:05:05] [Server thread/INFO]: JugandoMiguel[/127.0.0.1:58860] logged in with entity id 22 at ([world]17.418168472292976, 106.0, 11.699999988079071)
+[11:08:39] [Server thread/INFO]: [Skript] Reloading all scripts...
+[11:08:39] [Server thread/INFO]: Line 365: (MusicalChairs.sk)
+[11:08:39] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
+[11:08:39] [Server thread/INFO]:     Line: function loadArenas(arena: string):
+[11:08:39] [Server thread/INFO]:  
+[11:08:40] [Server thread/INFO]: Successfully reloaded all scripts. (805ms)
+[11:08:45] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload test
+[11:09:29] [Server thread/INFO]: [Skript] Reloading all scripts...
+[11:09:29] [Server thread/INFO]: Line 368: (MusicalChairs.sk)
+[11:09:29] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
+[11:09:29] [Server thread/INFO]:     Line: function loadArenas(arena: string):
+[11:09:29] [Server thread/INFO]:  
+[11:09:29] [Server thread/INFO]: Line 79: (MusicalChairs.sk)
+[11:09:29] [Server thread/INFO]:     Functions cannot be used here (or there is a problem with your arguments).
+[11:09:29] [Server thread/INFO]:     Line: if isArenaReady(arg-3):
+[11:09:29] [Server thread/INFO]:  
+[11:09:29] [Server thread/INFO]:     Encountered 1 error while reloading all scripts! (615ms)
+[11:09:33] [Server thread/INFO]: [Skript] Reloading all scripts...
+[11:09:33] [Server thread/INFO]: Line 368: (MusicalChairs.sk)
+[11:09:33] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
+[11:09:33] [Server thread/INFO]:     Line: function loadArenas(arena: string):
+[11:09:33] [Server thread/INFO]:  
+[11:09:33] [Server thread/INFO]: Line 79: (MusicalChairs.sk)
+[11:09:33] [Server thread/INFO]:     Can't understand this condition: 'isArenaReady(arg-3) true'
+[11:09:33] [Server thread/INFO]:     Line: if isArenaReady(arg-3) true:
+[11:09:33] [Server thread/INFO]:  
+[11:09:33] [Server thread/INFO]:     Encountered 1 error while reloading all scripts! (448ms)
+[11:09:48] [Server thread/INFO]: [Skript] Reloading all scripts...
+[11:09:48] [Server thread/INFO]: Line 368: (MusicalChairs.sk)
+[11:09:48] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
+[11:09:48] [Server thread/INFO]:     Line: function loadArenas(arena: string):
+[11:09:48] [Server thread/INFO]:  
+[11:09:48] [Server thread/INFO]: Successfully reloaded all scripts. (629ms)
+[11:09:51] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload test
+[11:09:55] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload TT
+[11:10:18] [Server thread/INFO]: [Skript] Reloading all scripts...
+[11:10:18] [Server thread/INFO]: Line 370: (MusicalChairs.sk)
+[11:10:18] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
+[11:10:18] [Server thread/INFO]:     Line: function loadArenas(arena: string):
+[11:10:18] [Server thread/INFO]:  
+[11:10:18] [Server thread/INFO]: Successfully reloaded all scripts. (443ms)
+[11:10:19] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload TT
+[11:11:01] [Server thread/INFO]: [Skript] Reloading all scripts...
+[11:11:01] [Server thread/INFO]: Line 371: (MusicalChairs.sk)
+[11:11:01] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
+[11:11:01] [Server thread/INFO]:     Line: function loadArenas(arena: string):
+[11:11:01] [Server thread/INFO]:  
+[11:11:02] [Server thread/INFO]: Successfully reloaded all scripts. (458ms)
+[11:11:03] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload TT
+[11:11:06] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload test
+[11:11:16] [Server thread/INFO]: [Skript] Reloading all scripts...
+[11:11:16] [Server thread/INFO]: Line 371: (MusicalChairs.sk)
+[11:11:16] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
+[11:11:16] [Server thread/INFO]:     Line: function loadArenas(arena: string):
+[11:11:16] [Server thread/INFO]:  
+[11:11:16] [Server thread/INFO]: Successfully reloaded all scripts. (416ms)
+[11:11:18] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload test
+[11:11:18] [Server thread/INFO]: si
+[11:11:22] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload TT
+[11:11:22] [Server thread/INFO]: no
+[11:11:24] [Server thread/INFO]: [JugandoMiguel: Set own game mode to Creative Mode]
+[11:11:36] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload TTs
+[11:11:36] [Server thread/INFO]: no
+[11:13:34] [Server thread/INFO]: [Skript] Reloading all scripts...
+[11:13:34] [Server thread/INFO]: Line 102: (MusicalChairs.sk)
+[11:13:34] [Server thread/INFO]:     indentation error: expected 20 spaces, but found 24 spaces
+[11:13:34] [Server thread/INFO]:     Line: send "" to player
+[11:13:34] [Server thread/INFO]:  
+[11:13:34] [Server thread/INFO]: Line 101: (MusicalChairs.sk)
+[11:13:34] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
+[11:13:34] [Server thread/INFO]:     Line: else if arg-3 isn't set:
+[11:13:34] [Server thread/INFO]:  
+[11:13:34] [Server thread/INFO]: Line 373: (MusicalChairs.sk)
+[11:13:34] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
+[11:13:34] [Server thread/INFO]:     Line: function loadArena(arena: string):
+[11:13:34] [Server thread/INFO]:  
+[11:13:34] [Server thread/INFO]:     Encountered 1 error while reloading all scripts! (425ms)
+[11:13:42] [Server thread/INFO]: [Skript] Reloading all scripts...
+[11:13:42] [Server thread/INFO]: Line 373: (MusicalChairs.sk)
+[11:13:42] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
+[11:13:42] [Server thread/INFO]:     Line: function loadArena(arena: string):
+[11:13:42] [Server thread/INFO]:  
+[11:13:42] [Server thread/INFO]: Successfully reloaded all scripts. (532ms)
+[11:13:44] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload TT
+[11:13:49] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload test
+[11:14:38] [Server thread/INFO]: [Skript] Reloading all scripts...
+[11:14:38] [Server thread/INFO]: Line 373: (MusicalChairs.sk)
+[11:14:38] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
+[11:14:38] [Server thread/INFO]:     Line: function loadArena(arena: string):
+[11:14:38] [Server thread/INFO]:  
+[11:14:38] [Server thread/INFO]: Successfully reloaded all scripts. (397ms)
+[11:14:39] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload test
+[11:14:42] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload TT
+[11:14:50] [Server thread/INFO]: [Skript] Reloading all scripts...
+[11:14:50] [Server thread/INFO]: Line 373: (MusicalChairs.sk)
+[11:14:50] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
+[11:14:50] [Server thread/INFO]:     Line: function loadArena(arena: string):
+[11:14:50] [Server thread/INFO]:  
+[11:14:50] [Server thread/INFO]: Successfully reloaded all scripts. (467ms)
+[11:14:51] [Server thread/INFO]: JugandoMiguel lost connection: Disconnected
+[11:14:51] [Server thread/INFO]: JugandoMiguel left the game
+[11:14:56] [User Authenticator #1/INFO]: UUID of player JugandoMiguel is 4dfe7a91-17b1-41b2-836e-c020f8a859fd
+[11:14:59] [Server thread/INFO]: JugandoMiguel joined the game
+[11:14:59] [Server thread/INFO]: JugandoMiguel[/127.0.0.1:57558] logged in with entity id 234 at ([world]20.675792114751864, 106.0, 31.320111738797056)
+[11:15:01] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload TT
+[11:17:18] [Server thread/INFO]: [Skript] Reloading all scripts...
+[11:17:18] [Server thread/INFO]: Line 375: (MusicalChairs.sk)
+[11:17:18] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
+[11:17:18] [Server thread/INFO]:     Line: function loadArena(arena: string):
+[11:17:18] [Server thread/INFO]:  
+[11:17:19] [Server thread/INFO]: Line 104: (MusicalChairs.sk)
+[11:17:19] [Server thread/INFO]:     Can't understand this condition/effect: send ""&6M&eC"&cYou have to input an arena!" to player
+[11:17:19] [Server thread/INFO]:     Line: send "{@game_prefix}&cYou have to input an arena!" to player
+[11:17:19] [Server thread/INFO]:  
+[11:17:19] [Server thread/INFO]:     Encountered 1 error while reloading all scripts! (418ms)
+[11:17:27] [Server thread/INFO]: [Skript] Reloading all scripts...
+[11:17:27] [Server thread/INFO]: Line 375: (MusicalChairs.sk)
+[11:17:27] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
+[11:17:27] [Server thread/INFO]:     Line: function loadArena(arena: string):
+[11:17:27] [Server thread/INFO]:  
+[11:17:27] [Server thread/INFO]: Successfully reloaded all scripts. (366ms)
+[11:17:30] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload TT
+[11:17:32] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload test
+[11:17:59] [Server thread/INFO]: [Skript] Reloading all scripts...
+[11:17:59] [Server thread/INFO]: Line 375: (MusicalChairs.sk)
+[11:17:59] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
+[11:17:59] [Server thread/INFO]:     Line: function loadArena(arena: string):
+[11:17:59] [Server thread/INFO]:  
+[11:18:00] [Server thread/INFO]: Successfully reloaded all scripts. (422ms)
+[11:18:01] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload test
+[11:18:02] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload TT
+[11:18:27] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload
+[11:19:03] [Server thread/INFO]: [Skript] Reloading all scripts...
+[11:19:03] [Server thread/INFO]: Line 378: (MusicalChairs.sk)
+[11:19:03] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
+[11:19:03] [Server thread/INFO]:     Line: function loadArena(arena: string):
+[11:19:03] [Server thread/INFO]:  
+[11:19:03] [Server thread/INFO]: Successfully reloaded all scripts. (384ms)
+[11:19:05] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload
+[11:19:08] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload TT
+[11:19:15] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload
+[11:19:34] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload asad
+[11:20:46] [Server thread/INFO]: [Skript] Reloading all scripts...
+[11:20:46] [Server thread/INFO]: Line 381: (MusicalChairs.sk)
+[11:20:46] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
+[11:20:46] [Server thread/INFO]:     Line: function loadArena(arena: string):
+[11:20:46] [Server thread/INFO]:  
+[11:20:47] [Server thread/INFO]: Successfully reloaded all scripts. (395ms)
+[11:20:48] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload asad
+[11:21:03] [Server thread/INFO]: [Skript] Reloading all scripts...
+[11:21:03] [Server thread/INFO]: Line 381: (MusicalChairs.sk)
+[11:21:03] [Server thread/INFO]:     Empty configuration section! You might want to indent one or more of the subsequent lines to make them belong to this section or remove the colon at the end of the line if you don't want this line to start a section.
+[11:21:03] [Server thread/INFO]:     Line: function loadArena(arena: string):
+[11:21:03] [Server thread/INFO]:  
+[11:21:04] [Server thread/INFO]: Successfully reloaded all scripts. (424ms)
+[11:21:04] [Server thread/INFO]: JugandoMiguel issued server command: /musicalchairs arena reload asad
+[11:25:01] [Server thread/INFO]: JugandoMiguel issued server command: /stop
+[11:25:01] [Server thread/INFO]: [JugandoMiguel: Stopping the server]
+[11:25:01] [Server thread/INFO]: Stopping server
+[11:25:01] [Server thread/INFO]: [BetterHud] Disabling BetterHud v1.14.0
+[11:25:01] [Server thread/INFO]: [BetterHud] Plugin disabled.
+[11:25:01] [Server thread/INFO]: [CommandPanels] Disabling CommandPanels v4.1.4
+[11:25:01] [Server thread/INFO]: [CommandPanels] RockyHawk's CommandPanels Plugin Disabled, aww man.
+[11:25:01] [Server thread/INFO]: [LiteEco] Disabling LiteEco v1.6.7-SNAPSHOT
+[11:25:01] [Server thread/INFO]: [PlaceholderAPI] Unregistered placeholder expansion liteeco
+[11:25:01] [Server thread/INFO]: [PlaceholderAPI] Reason: required plugin LiteEco was disabled.
+[11:25:01] [Server thread/INFO]: [LiteEco] Unregistering hooks...
+[11:25:01] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] LiteEco - Shutdown initiated...
+[11:25:01] [Server thread/INFO]: [com.zaxxer.hikari.HikariDataSource] LiteEco - Shutdown completed.
+[11:25:01] [Server thread/INFO]: [LiteEco] ✅ Database connection closed cleanly.
+[11:25:01] [Server thread/INFO]: [LiteEco] Plugin is disabled
+[11:25:01] [Server thread/INFO]: [Multiverse-Core] Disabling Multiverse-Core v5.3.4
+[11:25:01] [Server thread/INFO]: [skript-yaml] Disabling skript-yaml v1.7.2
+[11:25:01] [Server thread/INFO]: [BetterModel] Disabling BetterModel v1.14.2
+[11:25:01] [Server thread/INFO]: [SkBee] Disabling SkBee v3.13.3
+[11:25:01] [Server thread/INFO]: [Nexo] Disabling Nexo v1.15
+[11:25:01] [Server thread/INFO]: Nexo | Unhooking plugin "PlaceholderAPI"
+[11:25:01] [Server thread/INFO]: Nexo | Successfully unloaded
+[11:25:01] [Server thread/INFO]: [skript-reflect] Disabling skript-reflect v2.6.1
+[11:25:01] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.7
+[11:25:01] [Server thread/INFO]: [Skript] Disabling Skript v2.13.2
+[11:25:01] [Server thread/INFO]: [Vault] Disabling Vault v1.7.3-b131
+[11:25:01] [Server thread/INFO]: Saving players
+[11:25:01] [Server thread/INFO]: JugandoMiguel lost connection: Server closed
+[11:25:01] [Server thread/INFO]: JugandoMiguel left the game
+[11:25:02] [Server thread/INFO]: Saving worlds
+[11:25:02] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[11:25:02] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
+[11:25:02] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
+[11:25:02] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
+[11:25:02] [Server thread/INFO]: [ChunkHolderManager] Saved 29 block chunks, 131 entity chunks, 0 poi chunks in world 'world' in 0,30s
+[11:25:02] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'world'
+[11:25:02] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'world'
+[11:25:02] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
+[11:25:02] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
+[11:25:02] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
+[11:25:02] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
+[11:25:02] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 1 entity chunks, 0 poi chunks in world 'world_nether' in 0,04s
+[11:25:02] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'world_nether'
+[11:25:02] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'world_nether'
+[11:25:02] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
+[11:25:02] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
+[11:25:02] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
+[11:25:02] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
+[11:25:02] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 10 entity chunks, 0 poi chunks in world 'world_the_end' in 0,02s
+[11:25:02] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'world_the_end'
+[11:25:02] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'world_the_end'
+[11:25:02] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[11:25:02] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[11:25:02] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[11:25:02] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[11:25:02] [Server thread/INFO]: Waiting for all RegionFile I/O tasks to complete...
+[11:25:02] [Server thread/INFO]: All RegionFile I/O tasks to complete
+[11:25:02] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of worker pool for up to 60s...
+[11:25:02] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of I/O pool for up to 60s...

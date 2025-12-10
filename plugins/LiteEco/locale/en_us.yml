@@ -1,0 +1,157 @@
+messages:
+  # Balance messages
+  balance:
+    format: <prefix> <white>Your balance of <currency> currency is <green><money></green>.
+      [!]
+    format_target: <prefix> <white>Balance of <#13AFFE><target></#13AFFE> <gold><currency></gold>
+      currency is <green><money></green>. [!]
+    top_format: <yellow><position># <gold><player></gold> <gray>- <green><money></green>
+    top_header: <gray><st>─━━━━━━─</st> <#64646F>[ <#F9AD47>BALTOP</#F9AD47> ]</#64646F>
+      <st>─━━━━━━─</st></gray>
+    top_footer: <gray><st>─━━━━━━─</st> <#64646F>[ <#F9AD47><pagination></#F9AD47> ]</#64646F>
+      <st>─━━━━━━─</st></gray>
+  
+  # Self-transaction messages
+  self:
+    add_money: <prefix> <white>You added <green><money></green> to your <currency> account.
+    withdraw_money: <prefix> <white>You removed <green><money></green> from your <currency>
+      account.
+    set_money: <prefix> <white>You set <green><money></green> <currency> for your account.
+  
+  # Transaction messages for target
+  target:
+    add_money: <prefix> <gold><sender></gold> <white>sent you <green><money></green> <currency>.
+    add_money_silent: <gray>+ <green><money>
+    withdraw_money: <prefix> <gold><sender></gold> <white>removed <green><money></green>
+      <currency> from your account.
+    withdraw_money_silent: <gray>- <red><money>
+    set_money: <prefix> <gold><sender></gold> <white>set the balance of your account to
+      <green><money></green> <currency>.
+  
+  # Transaction messages for sender
+  sender:
+    add_money: <prefix> <white>You sent <green><money></green> <currency> to <gold><target></gold>.
+    withdraw_money: <prefix> <white>You removed <green><money></green> <currency> from
+      <gold><target></gold>.
+    set_money: <prefix> <white>You set <green><money></green> <currency> for <gold><target></gold>.
+  
+  # Global actions messages (sent to the sender who made the global action)
+  global:
+    add_money: <prefix> <white>You added <green><money></green> <currency> for all players.
+    withdraw_money: <prefix> <white>You withdrew <green><money></green> <currency> from
+      all players.
+    set_money: <prefix> <white>You set <green><money></green> <currency> for all players.
+  
+  # Broadcast messages (sent to all players after a global action)
+  broadcast:
+    add_money: <prefix> <gold><sender></gold> <white>added <green><money></green> <currency>
+      for all players.
+    withdraw_money: <prefix> <gold><sender></gold> <white>withdrew <green><money></green>
+      <currency> from all players.
+    set_money: <prefix> <gold><sender></gold> <white>set <green><money></green> <currency>
+      for all players.
+  
+  # Error messages
+  error:
+    account_not_exist: <prefix> <red>Account <account> does not exist [!]
+    account_now_exist: <prefix> <red>Account <account> now exists [!]
+    missing_balance_others_permission: <prefix> <red>You do not have permission to view
+      the account balance of others [!]
+    missing_currency_permission: <prefix> <red>You do not have permission to use this
+      currency [!]
+    insufficient_funds: <prefix> <red>Insufficient funds! [!]
+    maximum_page: <red>Limit of pagination is <max_page>
+    export_argument: <prefix> <red>This <argument> argument is not valid or not ready
+      for production.
+    export_failed: <prefix> <red>There was an issue during the export. Please check the
+      console for more details.
+    import_failed: <prefix> <red>There was an issue during the import or missing data
+      !
+    purge_argument: <prefix> <red>This <argument> argument is not valid or not ready for
+      production.
+    purge_monolog_fail: <prefix> <red>You can't delete logs, because table is empty [!]
+    player_is_null: <prefix> <red>Please provide a player name [!]
+    self_pay: <prefix> <red>You cannot send money to yourself [!]
+    amount_above_limit: <prefix> <red>Amount is above, allowed limit of server !
+    balance_above_limit: <prefix> <red>Balance of account <account> is above, allowed
+      limit of server !
+    database_exception: '<prefix> <red>Something unexpected happened while working with
+      the database: <exception> [!]'
+  
+  # This messages not support MiniMessage and Style Formatting !
+  # Please don't try edit this messages !
+  parser:
+    error:
+      format_amount: Invalid amount. Use float numbers or compact representations (e.g 1K)
+        [!]
+      negative_amount: Negative amounts are not allowed. [!]
+      currency_not_exist: These currency %s not exist [!]
+      language_not_exist: This %s language is not supported [!]
+      convert_fail: Something broke during convert look into console [!]
+  
+  # Monolog message formatting
+  monolog:
+    header: <gray><st>─━━━━━━─</st> <blue>[ <yellow>Transaction History <blue>] <gray><st>─━━━━━━─</st>
+    footer: <gray><st>─━━━━━━─</st> <blue>[ <pagination> <blue>] <gray><st>─━━━━━━─</st>
+    formatting: <blue>[<white><hover:show_text:'<timestamp>'><action></hover></white>]</blue>
+      <sender> to <target> <green><st><hover:show_text:'<red>Old balance'><previous_balance></hover></st>
+      <hover:show_text:'<green>New balance'><new_balance></hover></green> <gold>[<currency>]</gold>
+  
+  # Admin commands
+  admin:
+    create_account: <prefix> <green>Account <account> was created [!]
+    config_reload: <prefix> <green>Config reloaded successfully [!]
+    translation_switch: <prefix> <green>Translation switched to <locale>.
+    translation_missing: <prefix> <red>Translation missing for <key>. Contact the developer
+      of this plugin.
+    purge_accounts: <prefix> <green>All player accounts were purged.
+    purge_null_accounts: <prefix> <green>All player accounts with null values were purged.
+    purge_default_accounts: <prefix> <green>All player accounts with default values were
+      purged.
+    purge_monolog_success: <prefix> <green>All logs about economy activities was purged
+      [!]
+    delete_account: <prefix> <green>Account of player <account> was deleted !
+    export_success: <prefix> <green>Export of <type> was successful [!]
+    import_success: <prefix> <green>Import of <converted>x accounts and <balances> balances
+      from <economy> to LiteEco was successful [!]
+  
+  # Translation for pagination component
+  # Is available with placeholder <pagination>
+  pagination:
+    previous: « Previous
+    center: ' <yellow><page>/<max_page> '
+    next: Next »
+  
+  help:
+  - <gray><st>─━━━━━━━━━━━━━━━━━─</st> LiteEco <st>─━━━━━━━━━━━━━━━━━─</st></gray>
+  - ' '
+  - <white>[+] <gray><hover:show_text:'<#CFE7F0>Shows commands list of plugin'>/money
+    help <white>
+  - <white>[+] <gray><hover:show_text:'<#CFE7F0>Show richest players'>/money top <#b37dc7>[page]
+  - <white>[+] <gray><hover:show_text:'<#CFE7F0>Show balance of your account or another
+    player'>/money bal <yellow>[username] <#3EE84D>[currency]
+  - <white>[+] <gray><hover:show_text:'<#CFE7F0>Send money to another player.'>/money
+    pay <yellow>[username] <#3EE84D>[currency] <#3EE84D><amount>
+  - ' '
+  - <gray><st>─━━━━━━━━━━━━━━━━━─</st> LiteEco <st>─━━━━━━━━━━━━━━━━━─</st></gray>
+  
+  admin-help:
+  - <gray><st>─━━━━━━━━━━━━━━━━━─</st> LiteEco  <st>─━━━━━━━━━━━━━━━━━─</st></gray>
+  - ' '
+  - <red>[★] <gray><hover:show_text:'<#F39E9E>Add money to another player/s.'>/eco add
+    <yellow><username> <#3EE84D><amount> <#3EE84D>[currency]
+  - <red>[★] <gray><hover:show_text:'<#F39E9E>Set money amount of another player/s.'>/eco
+    set <yellow><username> <#3EE84D><amount> <#3EE84D>[currency]
+  - <red>[★] <gray><hover:show_text:'<#F39E9E>Remove money from another player/s.'>/eco
+    withdraw <yellow><username> <#3EE84D><amount> <#3EE84D>[currency]
+  - <red>[★] <gray><hover:show_text:'<#F39E9E>Purge data.'>/eco database purge <#b37dc7><argument>
+    <#3EE84D>[currency]
+  - <red>[★] <gray><hover:show_text:'<#F39E9E>Export of database to another format.'>/eco
+    database export <#b37dc7><argument> <#3EE84D>[currency]
+  - <red>[★] <gray><hover:show_text:'<#F39E9E>Import from other Economy plugin to LiteEco.'>/eco
+    database import <#b37dc7><argument> <#3EE84D>[currency]
+  - <red>[★] <gray><hover:show_text:'<#F39E9E>Switch message translation.'>/eco config
+    lang <#b37dc7>[lang]
+  - <red>[★] <gray><hover:show_text:'<#F39E9E>Reload configuration.'>/eco config reload
+  - ' '
+  - <gray><st>─━━━━━━━━━━━━━━━━━─</st> LiteEco <st>─━━━━━━━━━━━━━━━━━─</st></gray>
